@@ -1,0 +1,64 @@
+.contactRow {
+  display: flex;
+  align-items: center;
+}
+
+.contactRow a {
+  color: maroon;
+}
+
+.iconWrapper {
+  color: black;
+  border-radius: 50px;
+  position: relative;
+}
+
+.iconWrapper[dataToolTip]::before {
+  content: attr(dataToolTip);
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  z-index: 2;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 5px 5px;
+  background-color: black;
+  white-space: nowrap;
+  text-align: center;
+  transition: 
+    transform 250ms ease-in,
+    top 250ms ease-in;
+}
+
+.iconWrapper[dataToolTip]:hover::before {
+  transform: translateX(-50%) scale(1);
+  top: -30px;
+}
+
+.icon {
+  font-size: 30px;
+  color: black;
+  background-color: rgb(255, 205, 205);
+  border-radius: 50px;
+  padding: 7px 7px;
+  height: 48px;
+  width: 48px;
+  opacity: 1;
+  transition-property: opacity, transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.37,-0.24, 0.56, 1.23);
+}
+
+.icon:hover {
+  opacity: 0.8;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+@media (max-width: 440px) {
+  .iconWrapper[dataToolTip]:hover::before {
+    transform: translateX(0);
+  }
+}
