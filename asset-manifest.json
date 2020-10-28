@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/david-r-frederick/portfolio/static/css/main.8261e909.chunk.css",
-    "main.js": "/david-r-frederick/portfolio/static/js/main.5bd8fcd7.chunk.js",
-    "main.js.map": "/david-r-frederick/portfolio/static/js/main.5bd8fcd7.chunk.js.map",
-    "runtime-main.js": "/david-r-frederick/portfolio/static/js/runtime-main.244c7795.js",
-    "runtime-main.js.map": "/david-r-frederick/portfolio/static/js/runtime-main.244c7795.js.map",
-    "static/js/2.5c3872bc.chunk.js": "/david-r-frederick/portfolio/static/js/2.5c3872bc.chunk.js",
-    "static/js/2.5c3872bc.chunk.js.map": "/david-r-frederick/portfolio/static/js/2.5c3872bc.chunk.js.map",
-    "index.html": "/david-r-frederick/portfolio/index.html",
-    "precache-manifest.a27ce021e6b116a60de0b3de13ced0bd.js": "/david-r-frederick/portfolio/precache-manifest.a27ce021e6b116a60de0b3de13ced0bd.js",
-    "service-worker.js": "/david-r-frederick/portfolio/service-worker.js",
-    "static/css/main.8261e909.chunk.css.map": "/david-r-frederick/portfolio/static/css/main.8261e909.chunk.css.map",
-    "static/js/2.5c3872bc.chunk.js.LICENSE.txt": "/david-r-frederick/portfolio/static/js/2.5c3872bc.chunk.js.LICENSE.txt",
-    "static/media/BugTrackerBig.png": "/david-r-frederick/portfolio/static/media/BugTrackerBig.35426327.png",
-    "static/media/BurgerBuilderBig.png": "/david-r-frederick/portfolio/static/media/BurgerBuilderBig.6b42c00e.png",
-    "static/media/LamarUniversity.jpg": "/david-r-frederick/portfolio/static/media/LamarUniversity.a0bc14af.jpg",
-    "static/media/OmnifoodBig.png": "/david-r-frederick/portfolio/static/media/OmnifoodBig.eebfbdc7.png",
-    "static/media/PAISD.jpg": "/david-r-frederick/portfolio/static/media/PAISD.bd8f7616.jpg",
-    "static/media/TXARNG.svg": "/david-r-frederick/portfolio/static/media/TXARNG.14a68d93.svg",
-    "static/media/WeatherAppBig.png": "/david-r-frederick/portfolio/static/media/WeatherAppBig.7fc7252c.png"
+    "main.css": "/portfolio/static/css/main.8261e909.chunk.css",
+    "main.js": "/portfolio/static/js/main.b06d292e.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.b06d292e.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.99525b3a.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.99525b3a.js.map",
+    "static/js/2.5c3872bc.chunk.js": "/portfolio/static/js/2.5c3872bc.chunk.js",
+    "static/js/2.5c3872bc.chunk.js.map": "/portfolio/static/js/2.5c3872bc.chunk.js.map",
+    "index.html": "/portfolio/index.html",
+    "precache-manifest.1463bd4eed584e8bf13425f46b6595b4.js": "/portfolio/precache-manifest.1463bd4eed584e8bf13425f46b6595b4.js",
+    "service-worker.js": "/portfolio/service-worker.js",
+    "static/css/main.8261e909.chunk.css.map": "/portfolio/static/css/main.8261e909.chunk.css.map",
+    "static/js/2.5c3872bc.chunk.js.LICENSE.txt": "/portfolio/static/js/2.5c3872bc.chunk.js.LICENSE.txt",
+    "static/media/BugTrackerBig.png": "/portfolio/static/media/BugTrackerBig.35426327.png",
+    "static/media/BurgerBuilderBig.png": "/portfolio/static/media/BurgerBuilderBig.6b42c00e.png",
+    "static/media/LamarUniversity.jpg": "/portfolio/static/media/LamarUniversity.a0bc14af.jpg",
+    "static/media/OmnifoodBig.png": "/portfolio/static/media/OmnifoodBig.eebfbdc7.png",
+    "static/media/PAISD.jpg": "/portfolio/static/media/PAISD.bd8f7616.jpg",
+    "static/media/TXARNG.svg": "/portfolio/static/media/TXARNG.14a68d93.svg",
+    "static/media/WeatherAppBig.png": "/portfolio/static/media/WeatherAppBig.7fc7252c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.244c7795.js",
+    "static/js/runtime-main.99525b3a.js",
     "static/js/2.5c3872bc.chunk.js",
     "static/css/main.8261e909.chunk.css",
-    "static/js/main.5bd8fcd7.chunk.js"
+    "static/js/main.b06d292e.chunk.js"
   ]
 }
