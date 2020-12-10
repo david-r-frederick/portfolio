@@ -30,13 +30,8 @@ a {
 
 .sectionsContainer {
   width: 100%;
+  transition: margin-left 300ms ease-in 0ms, margin-top 300ms ease-in;
   margin-left: 19.2rem;
-}
-
-@media (max-width: 991px) {
-  .sectionsContainer {
-    margin-left: 0;
-  }
 }
 
 .text {
@@ -65,106 +60,6 @@ a {
 
 .experienceBullet {
   line-height: 3.2rem;
-}
-
-.projectContainer {
-  position: relative;
-  background-color: orange;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  padding: 0 0;
-  width: 49.6rem;
-}
-
-.projectImg {
-  cursor: pointer;
-  width: 100%;
-}
-
-.projectContainer::after {
-  content: "";
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  transition: opacity 200ms ease-in;
-}
-
-.projectContainer:hover::after {
-  opacity: 1;
-}
-
-.projectButton {
-  cursor: pointer;
-  background-color: maroon;
-  font-size: 2rem;
-  padding: 1.1rem;
-  color: white;
-  border: none;
-  z-index: 2;
-  transform: translateX(-50%);
-  transition: transform 250ms ease-in, opacity 250ms ease-in;
-}
-
-.projectContainer:hover .projectButton {
-  transform: translate(-50%, -7rem);
-  opacity: 1;
-  color: white;
-  text-decoration: none;
-}
-
-.viewProjectBtn,
-.seeCodeBtn {
-  position: absolute;
-  bottom: 0;
-  opacity: 0;
-}
-
-.viewProjectBtn {
-  left: 33%;
-}
-
-.seeCodeBtn {
-  left: 66%;
-}
-
-.projectTitle {
-  position: absolute;
-  color: black;
-  top: 0;
-  opacity: 0;
-  font-weight: bold;
-  padding: 1.1rem;
-  border: none;
-  z-index: 2;
-  transition: transform 250ms ease-in, opacity 250ms ease-in;
-}
-
-.projectContainer:hover .projectTitle {
-  transform: translateY(2rem);
-  opacity: 1;
-}
-
-.projectTechnologies {
-  position: absolute;
-  color: maroon;
-  top: 5rem;
-  opacity: 0;
-  font-weight: bold;
-  padding: 1.1rem;
-  border: none;
-  z-index: 2;
-  transition: transform 250ms ease-in, opacity 250ms ease-in;
-}
-
-.projectContainer:hover .projectTechnologies {
-  transform: translateY(2rem);
-  opacity: 1;
 }
 
 .educationPrimary {
@@ -235,13 +130,78 @@ a {
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
   width: 100vw;
   height: 100%;
   opacity: 0.7;
   z-index: 10;
   background: rgb(0, 0, 0);
+}
+
+.topBar {
+  width: 100%;
+  height: 10rem;
+  background-color: white;
+  position: fixed;
+  top: -10rem;
+  left: 0;
+  transition: top 250ms ease-in;
+  z-index: 9;
+}
+
+.meBox {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.name {
+  color: maroon;
+}
+
+.jobTitle {
+  color: #aaa;
+}
+
+.hamburgerButton {
+  position: fixed;
+  width: 4rem;
+  height: 4rem;
+  right: 1rem;
+  top: -4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: none;
+  border-radius: 100%;
+  padding: 1rem;
+  z-index: 101;
+  transition: top 250ms ease-in;
+}
+
+.hamburgerButton:focus {
+  outline: none;
+}
+
+.line {
+  width: 80%;
+  height: 2px;
+  background-color: gray;
+  margin: 0 1rem;
+}
+
+@media (max-width: 991px) {
+  .sectionsContainer {
+    margin-left: 0;
+    margin-top: 10rem;
+  }
+
+  .topBar {
+    top: 0px;
+  }
+
+  .hamburgerButton {
+    top: 3rem;
+  }
 }
 
 @media (max-width: 550px) {

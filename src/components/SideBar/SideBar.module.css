@@ -1,85 +1,46 @@
 .navContainer {
+  position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: flex-start;
-  position: fixed;
-  z-index: 1;
-  height: 100%;
   width: 192px;
-  padding-left: 0;
-  padding-right: 0;
+  height: 100vh;
   background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 3px 0px 5px gray;
+  transition: transform 250ms ease-out 100ms, margin-left 250ms ease-out;
+  z-index: 12;
+}
+
+.meBox {
+  padding: 2rem 0;
+  text-align: center;
+  border-bottom: 1px solid #aaa;
+  background-color: white;
+}
+
+.name {
+  margin: 0;
+  margin-bottom: .5rem;
+  color: maroon;
+}
+
+.jobTitle {
+  margin: 0;
+  color: #333;
 }
 
 .navLinksContainer {
   list-style: none;
+  background-color: white;
+  margin-left: 0;
   padding-left: 0;
-  width: 100%;
 }
 
-.navCustom {
-  width: 100%;
-}
-
-.collapseContainer {
-  align-items: flex-start;
-  width: 100%;
-}
-
-.jobTitle {
-  color: #a1a1a1;
-  font-size: 1.4rem;
-  margin-bottom: 0;
-}
-
-.meBox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 15%;
-  border-bottom: rgb(230, 230, 230) 1px solid;
-  margin-bottom: 2px;
-}
-
-.name {
-  font-size: 2.5rem;
-  color: rgb(66, 13, 9);
-  font-weight: lighter;
+.toggled {
+  margin-left: 197px;
 }
 
 @media (max-width: 991px) {
   .navContainer {
-    width: 100%;
-    height: 11%;
-    position: fixed;
-    z-index: 12;
-  }
-
-  .meBox {
-    position: absolute;   
-    border-bottom: transparent;
-    height: 100%;
-    width: fit-content;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .name {
-    margin-bottom: 0;
-  }
-
-  .collapseContainer {
-    position: absolute;
-    margin-top: 95px;
-    width: 192px;
-    height: 95vh;
-    background-color: white;
-    top: 0;
+    transform: translateX(-103%);
   }
 }

@@ -5,15 +5,15 @@ import classes from './App.module.css';
 import { AiOutlineMail, AiOutlinePhone, AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { FaHackerrank } from 'react-icons/fa';
 import { SiBootstrap, SiCodewars, SiCss3, SiHtml5, SiJavascript, SiReact } from 'react-icons/si';
-import BurderBuilderImg from './assets/img/BurgerBuilderBig.png';
+import BurgerBuilderImg from './assets/img/BurgerBuilderBig.png';
 import OmnifoodImg from './assets/img/OmnifoodBig.png';
 import BugTrackerImg from './assets/img/BugTrackerBig.png';
 import WeatherAppImg from './assets/img/WeatherAppBig.png';
 import ContactItem from './components/ContactItem/ContactItem';
 import Card from './components/Card/Card';
 import LamarUniversityImg from './assets/img/LamarUniversity.jpg';
-import PAISDImg from './assets/img/PAISD.jpg';
 import TXARNGImg from './assets/img/TXARNG.svg';
+import Project from './components/Project/Project';
 
 class App extends React.Component {
     constructor(props) {
@@ -25,21 +25,57 @@ class App extends React.Component {
         this.educationRef = React.createRef();
         this.contactRef = React.createRef();
         this.state = {
-          sidebarTogg: false,
-        }
+            sidebarTogg: false,
+        };
     }
+
+    componentDidMount() {
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 991) {
+                this.setState({ sidebarTogg: false });
+            }
+        });
+    }
+
+    closeSideBar = () => {
+        this.setState({ sidebarTogg: false });
+    };
 
     render() {
         const { aboutRef, experienceRef, projectsRef, skillsRef, educationRef, contactRef } = this;
+
         return (
             <div className={classes.App}>
-                <SideBar refs={{ aboutRef, experienceRef, projectsRef, skillsRef, educationRef, contactRef }}
-                sidebarToggled={() => this.setState((prevState) => {
-                  return {
-                    sidebarTogg: !prevState.sidebarTogg,
-                  }
-                })} />
-                {this.state.sidebarTogg ? <div className={classes.blackCover}></div> : null}
+                <SideBar
+                    refs={{ aboutRef, experienceRef, projectsRef, skillsRef, educationRef, contactRef }}
+                    toggled={this.state.sidebarTogg}
+                    closeSideBar={this.closeSideBar}
+                />
+                {this.state.sidebarTogg ? <div onClick={this.closeSideBar} className={classes.blackCover}></div> : null}
+                <div className={classes.topBar}>
+                    <div className={classes.meBox}>
+                        <h2 className={classes.name}>
+                            David
+                            <br />
+                            Frederick
+                        </h2>
+                        <p className={classes.jobTitle}>Front-End Developer</p>
+                    </div>
+                </div>
+                <button
+                    className={classes.hamburgerButton}
+                    onClick={() =>
+                        this.setState((prevState) => {
+                            return {
+                                sidebarTogg: !prevState.sidebarTogg,
+                            };
+                        })
+                    }
+                >
+                    <div className={classes.line}></div>
+                    <div className={classes.line}></div>
+                    <div className={classes.line}></div>
+                </button>
                 <div className={classes.sectionsContainer}>
                     <div ref={this.aboutRef}>
                         <SectionHeaderBar id="about" title="ABOUT" />
@@ -68,7 +104,9 @@ class App extends React.Component {
                                         src={LamarUniversityImg}
                                         alt="Lamar University Logo"
                                     />
-                                    <div className={`d-flex align-items-center justify-content-between w-100 mx-3 ${classes.expText}`}>
+                                    <div
+                                        className={`d-flex align-items-center justify-content-between w-100 mx-3 ${classes.expText}`}
+                                    >
                                         <h2>Lamar University</h2>
                                         <h4>Tech Support &#38; Admin. Specialist</h4>
                                     </div>
@@ -81,40 +119,39 @@ class App extends React.Component {
                                             master's, and doctorate level degrees.
                                         </i>
                                     </p>
+                                    <h4>
+                                        Headed 4 direct reports and oversaw day-to-day technical and administrative
+                                        operations of the Office of International Education and Services.
+                                    </h4>
+                                    <br />
                                     <h5>MEDIA &amp; WEB SUPPORT</h5>
                                     <ul>
                                         <li className={classes.experienceBullet}>
-                                            Completed redesign of 4 department websites using a CMS
+                                            Collaborated with department decision-makers, analyzed existing websites for
+                                            areas needing improvement, gathered requirements and desired website
+                                            functionalities, and planning framework and content of new sites
                                         </li>
                                         <li className={classes.experienceBullet}>
-                                            Managed all media platforms: Facebook, FormStack, Setmore, Outlook, Google
-                                            Forms{' '}
+                                            Employed Cascade CMS to design, develop, and maintain 4 new department
+                                            websites
                                         </li>
                                         <li className={classes.experienceBullet}>
-                                            Designed digital marketing materials, flyers, and programs for 50+ biannual
-                                            events
-                                        </li>
-                                        <li className={classes.experienceBullet}>
-                                            Trained and supervised team of 4 employees
+                                            Coordinated with support staff on the development of digital copy for dozens
+                                            of new web pages
                                         </li>
                                     </ul>
                                     <br />
                                     <h5>ADMINISTRATIVE SUPPORT</h5>
                                     <ul>
                                         <li className={classes.experienceBullet}>
-                                            Created comprehensive office policies and procedures manual
+                                            Used Formstack and Google Forms to create, manage, and distribute over 35
+                                            forms covering student specialization changes, special requests, transfers,
+                                            and work authorizations.
                                         </li>
                                         <li className={classes.experienceBullet}>
-                                            Provided excellent customer service to students, faculty, staff, and
-                                            visiting professors
-                                        </li>
-                                        <li className={classes.experienceBullet}>
-                                            Assist in execution of hurricane response operations to assist international
-                                            students in evacuation and inquiries
-                                        </li>
-                                        <li className={classes.experienceBullet}>
-                                            Coordinate events to include: reserving space, ordering supplies, and
-                                            fundraising
+                                            Handled logistics and inventory management, supported budget monitoring
+                                            and management activities, interviewed, and recruited support staff, and
+                                            orchestrated over 50 biannual events
                                         </li>
                                     </ul>
                                     <br />
@@ -122,82 +159,6 @@ class App extends React.Component {
                                 </div>
                             </div>
                         </Card>
-                        {/* <Card>
-                            <div className="my-3 mx-3">
-                                <div className={`d-flex flex-row ${classes.experienceContent}`}>
-                                    <img
-                                        className={classes.experienceImg}
-                                        src={LamarUniversityImg}
-                                        alt="Lamar University Logo"
-                                    />
-                                    <div className="d-flex align-items-center justify-content-between w-100 mx-3">
-                                        <h2>Lamar University</h2>
-                                        <h4>Human Resources Assistant</h4>
-                                    </div>
-                                </div>
-                                <br />
-                                <div>
-                                    <p>
-                                        <i>
-                                            State university specializing in engineering that offers bachelor's,
-                                            master's, and doctorate level degrees.
-                                        </i>
-                                    </p>
-                                    <h5>FRONT DESK &amp; ONBOARDING</h5>
-                                    <ul>
-                                        <li className={classes.experienceBullet}>
-                                            Improved and managed the employee onboarding process of compiling hiring
-                                            packets, background checks, and verifying I-9s for over 400 employees
-                                        </li>
-                                        <li className={classes.experienceBullet}>
-                                            Entered data into HRIS for creating and altering employee records
-                                        </li>
-                                    </ul>
-                                    <br />
-                                    <p>Sep 2017 - Sep 2018 | Beaumont, TX</p>
-                                </div>
-                            </div>
-                        </Card> */}
-                        {/* <Card>
-                            <div className="my-3 mx-3">
-                                <div className={`d-flex flex-row ${classes.experienceContent}`}>
-                                    <img
-                                        className={classes.experienceImg}
-                                        src={PAISDImg}
-                                        alt="Port Arthur Independent School District Logo"
-                                    />
-                                    <div className="d-flex align-items-center justify-content-between w-100 mx-3">
-                                        <h2>Port Arthur ISD</h2>
-                                        <h4>9th Grade Spanish Teacher</h4>
-                                    </div>
-                                </div>
-                                <br />
-                                <div>
-                                    <p>
-                                        <i>Public school system for elementary to high school students.</i>
-                                    </p>
-                                    <h5>TEACHING</h5>
-                                    <ul>
-                                        <li className={classes.experienceBullet}>
-                                            Prepared organized and logical lesson plans using all learning styles to
-                                            engage students and promote learning
-                                        </li>
-                                        <li className={classes.experienceBullet}>
-                                            Resolved conflicts between students in a timely and professional manner
-                                        </li>
-                                        <li className={classes.experienceBullet}>
-                                            Maintained consistent contact with parents whose students were struggling
-                                        </li>
-                                        <li className={classes.experienceBullet}>
-                                            Collaborated with other teacher in department for annual traditions and
-                                            guidance
-                                        </li>
-                                    </ul>
-                                    <br />
-                                    <p>Aug 2016 - Aug 2017 | Port Arthur, TX</p>
-                                </div>
-                            </div>
-                        </Card> */}
                         <Card>
                             <div className="my-3 mx-3">
                                 <div className={`d-flex flex-row ${classes.experienceContent}`}>
@@ -206,7 +167,9 @@ class App extends React.Component {
                                         src={LamarUniversityImg}
                                         alt="Lamar University Logo"
                                     />
-                                    <div className={`d-flex align-items-center justify-content-between w-100 mx-3 ${classes.expText}`}>
+                                    <div
+                                        className={`d-flex align-items-center justify-content-between w-100 mx-3 ${classes.expText}`}
+                                    >
                                         <h2>Lamar University</h2>
                                         <h4>Computer Lab Technician</h4>
                                     </div>
@@ -247,7 +210,9 @@ class App extends React.Component {
                                         src={TXARNGImg}
                                         alt="Texas Army National Guard Logo"
                                     />
-                                    <div className={`d-flex align-items-center justify-content-between w-100 mx-3 ${classes.expText}`}>
+                                    <div
+                                        className={`d-flex align-items-center justify-content-between w-100 mx-3 ${classes.expText}`}
+                                    >
                                         <h2>Texas Army National Guard</h2>
                                         <h4>Chaplain Assistant</h4>
                                     </div>
@@ -279,92 +244,40 @@ class App extends React.Component {
                         <SectionHeaderBar title="PROJECTS" />
                     </div>
                     <div className="row d-flex justify-content-around my-4">
-                        <div className={classes.projectContainer}>
-                            <h2 className={classes.projectTitle}>Bug Tracker</h2>
-                            <h3 className={classes.projectTechnologies}>React JS, Firebase</h3>
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href="https://bug-tracker-6ea40.web.app/login"
-                                className={`${classes.viewProjectBtn} ${classes.projectButton}`}
-                            >
-                                View Project
-                            </a>
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href="https://github.com/david-r-frederick/bug-tracker"
-                                className={`${classes.seeCodeBtn} ${classes.projectButton}`}
-                            >
-                                See Code
-                            </a>
-                            <img className={classes.projectImg} src={BugTrackerImg} alt="third project" />
-                        </div>
-                        <div className={`${classes.projectContainer}`}>
-                            <h2 className={classes.projectTitle}>Burger Builder</h2>
-                            <h3 className={classes.projectTechnologies}>React JS, Firebase</h3>
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href="https://react-my-burger-fc3a1.web.app/"
-                                className={`${classes.viewProjectBtn} ${classes.projectButton}`}
-                            >
-                                View Project
-                            </a>
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href="https://github.com/david-r-frederick/burger-builder-demo"
-                                className={`${classes.seeCodeBtn} ${classes.projectButton}`}
-                            >
-                                See Code
-                            </a>
-                            <img className={classes.projectImg} src={BurderBuilderImg} alt="first project" />
-                        </div>
+                        <Project
+                            title="Bug Tracker"
+                            technologies="React JS, BootStrap, Firebase"
+                            codeHref="https://github.com/david-r-frederick/bug-tracker"
+                            projectHref="https://bug-tracker-6ea40.web.app/login"
+                            projectImage={BugTrackerImg}
+                            altMessage="Bug Tracker project image"
+                        />
+                        <Project
+                            title="Burger Builder"
+                            technologies="React JS, Firebase"
+                            codeHref="https://github.com/david-r-frederick/burger-builder-demo"
+                            projectHref="https://react-my-burger-fc3a1.web.app/"
+                            projectImage={BurgerBuilderImg}
+                            altMessage="Weather app project image"
+                        />
                     </div>
                     <div className="row d-flex justify-content-around my-4">
-                        <div className={`${classes.projectContainer}`}>
-                            <h2 className={classes.projectTitle}>Omnifood</h2>
-                            <h3 className={classes.projectTechnologies}>HTML, CSS, jQuery</h3>
-                            <img className={classes.projectImg} src={OmnifoodImg} alt="second project" />
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href="https://david-r-frederick.github.io/omnifood-website-demo/"
-                                className={`${classes.viewProjectBtn} ${classes.projectButton}`}
-                            >
-                                View Project
-                            </a>
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href="https://github.com/david-r-frederick/omnifood-website-demo"
-                                className={`${classes.seeCodeBtn} ${classes.projectButton}`}
-                            >
-                                See Code
-                            </a>
-                        </div>
-                        <div className={`${classes.projectContainer}`}>
-                            <h2 className={classes.projectTitle}>Weather App</h2>
-                            <h3 className={classes.projectTechnologies}>React JS</h3>
-                            <img className={classes.projectImg} src={WeatherAppImg} alt="second project" />
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href="https://weather-app-3b941.web.app/current"
-                                className={`${classes.viewProjectBtn} ${classes.projectButton}`}
-                            >
-                                View Project
-                            </a>
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href="https://github.com/david-r-frederick/personal-react-demos/tree/master/weather-app-demo"
-                                className={`${classes.seeCodeBtn} ${classes.projectButton}`}
-                            >
-                                See Code
-                            </a>
-                        </div>
+                        <Project
+                            title="Omnifood"
+                            technologies="HTML, CSS, jQuery"
+                            codeHref="https://github.com/david-r-frederick/omnifood-website-demo"
+                            projectHref="https://david-r-frederick.github.io/omnifood-website-demo/"
+                            projectImage={OmnifoodImg}
+                            altMessage="Omnifood project image"
+                        />
+                        <Project
+                            title="Weather App"
+                            technologies="React JS"
+                            codeHref="https://github.com/david-r-frederick/personal-react-demos/tree/master/weather-app-demo"
+                            projectHref="https://weather-app-3b941.web.app/current"
+                            projectImage={WeatherAppImg}
+                            altMessage="Weather app project image"
+                        />
                     </div>
                     <div ref={this.skillsRef}>
                         <SectionHeaderBar id="stack" title="STACK" />
