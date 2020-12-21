@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.9836172a.chunk.css",
-    "main.js": "/portfolio/static/js/main.62949e69.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.62949e69.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.c7df3b06.chunk.css",
+    "main.js": "/portfolio/static/js/main.608b16d1.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.608b16d1.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.99525b3a.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.99525b3a.js.map",
-    "static/js/2.c193b06c.chunk.js": "/portfolio/static/js/2.c193b06c.chunk.js",
-    "static/js/2.c193b06c.chunk.js.map": "/portfolio/static/js/2.c193b06c.chunk.js.map",
+    "static/js/2.10e52cc2.chunk.js": "/portfolio/static/js/2.10e52cc2.chunk.js",
+    "static/js/2.10e52cc2.chunk.js.map": "/portfolio/static/js/2.10e52cc2.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.4830320cf37466e5afec3d57e4fd0885.js": "/portfolio/precache-manifest.4830320cf37466e5afec3d57e4fd0885.js",
+    "precache-manifest.4eef642504ef2933168586b68635800a.js": "/portfolio/precache-manifest.4eef642504ef2933168586b68635800a.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/main.9836172a.chunk.css.map": "/portfolio/static/css/main.9836172a.chunk.css.map",
-    "static/js/2.c193b06c.chunk.js.LICENSE.txt": "/portfolio/static/js/2.c193b06c.chunk.js.LICENSE.txt",
+    "static/css/main.c7df3b06.chunk.css.map": "/portfolio/static/css/main.c7df3b06.chunk.css.map",
+    "static/js/2.10e52cc2.chunk.js.LICENSE.txt": "/portfolio/static/js/2.10e52cc2.chunk.js.LICENSE.txt",
     "static/media/BugTrackerBig.png": "/portfolio/static/media/BugTrackerBig.35426327.png",
     "static/media/BurgerBuilderBig.png": "/portfolio/static/media/BurgerBuilderBig.6b42c00e.png",
+    "static/media/CSSPressMeBig.png": "/portfolio/static/media/CSSPressMeBig.75b4167f.png",
     "static/media/LamarUniversity.jpg": "/portfolio/static/media/LamarUniversity.a0bc14af.jpg",
     "static/media/OmnifoodBig.png": "/portfolio/static/media/OmnifoodBig.eebfbdc7.png",
     "static/media/ResumeDavidFrederick.pdf": "/portfolio/static/media/ResumeDavidFrederick.74e567f9.pdf",
@@ -22,8 +23,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.99525b3a.js",
-    "static/js/2.c193b06c.chunk.js",
-    "static/css/main.9836172a.chunk.css",
-    "static/js/main.62949e69.chunk.js"
+    "static/js/2.10e52cc2.chunk.js",
+    "static/css/main.c7df3b06.chunk.css",
+    "static/js/main.608b16d1.chunk.js"
   ]
 }
