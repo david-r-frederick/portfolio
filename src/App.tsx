@@ -5,7 +5,7 @@ import SectionHeaderBar from "./components/SectionHeaderBar/SectionHeaderBar";
 import classes from "./App.module.css";
 import { AiOutlineMail, AiOutlinePhone, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { FaHackerrank } from "react-icons/fa";
-import { SiBootstrap, SiCodewars, SiCss3, SiHtml5, SiJavascript, SiReact } from "react-icons/si";
+import { SiCodewars, SiBootstrap, SiCss3, SiHtml5, SiJavascript, SiReact } from "react-icons/si";
 import BurgerBuilderImg from "./assets/img/BurgerBuilderBig.png";
 import OmnifoodImg from "./assets/img/OmnifoodBig.png";
 import BugTrackerImg from "./assets/img/BugTrackerBig.png";
@@ -18,6 +18,7 @@ import Project from "./components/Project/Project";
 import Card from "./components/Card/Card";
 import "./scss/index.scss";
 import ExperienceCard from "./components/ExperienceCard/ExperienceCard";
+import { Section } from "./components/Section/Section";
 
 interface IAppState {
     sidebarTogg: boolean;
@@ -111,10 +112,8 @@ class App extends React.Component<{}, IAppState> {
                             office- to include rebuilding their website. To view my rebuild, click here.
                         </p>
                     </div>
-                    <div ref={this.experienceRef}>
-                        <SectionHeaderBar id="experience" title="EXPERIENCE" />
-                    </div>
-                    <Container className="my-4">
+                    {/* @ts-ignore */}
+                    <Section title="experience" ref={this.experienceRef}>
                         <ExperienceCard
                             imgSrc={LamarUniversityImg}
                             imgAlt="Lamar University Logo"
@@ -192,11 +191,9 @@ class App extends React.Component<{}, IAppState> {
                             startMonthYear="Feb 2008"
                             endMonthYear="Mar 2014"
                             location="Houston, TX" />
-                    </Container>
-                    <div ref={this.projectsRef}>
-                        <SectionHeaderBar title="PROJECTS" />
-                    </div>
-                    <Container>
+                    </Section>
+                    {/* @ts-ignore */}
+                    <Section title="personal projects" ref={this.projectsRef}>
                         <Row className="my-4">
                             <Col xs={12} md={6}>
                                 <Project
@@ -244,123 +241,104 @@ class App extends React.Component<{}, IAppState> {
                                     altMessage="Weather app project image" />
                             </Col>
                         </Row>
-                    </Container>
-                    <div ref={this.skillsRef}>
-                        <SectionHeaderBar id="stack" title="STACK" />
-                    </div>
-                    <div className="container my-4">
-                        <Card>
-                            <div className={classes.stackRow}>
-                                <div className={classes.stackItem}>
-                                    <SiJavascript className={`${classes.stackIcon} ${classes.jsIcon}`} />
-                                    <p>JavaScript</p>
-                                </div>
-                                <div className={classes.stackItem}>
-                                    <SiCss3 className={`${classes.stackIcon} ${classes.cssIcon}`} />
-                                    <p>CSS</p>
-                                </div>
-                                <div className={classes.stackItem}>
-                                    <SiReact className={`${classes.stackIcon} ${classes.reactIcon}`} />
-                                    <p>React</p>
-                                </div>
-                                <div className={classes.stackItem}>
-                                    <SiHtml5 className={`${classes.stackIcon} ${classes.htmlIcon}`} />
-                                    <p>HTML5</p>
-                                </div>
-                                <div className={classes.stackItem}>
-                                    <SiBootstrap className={`${classes.stackIcon} ${classes.bootstrapIcon}`} />
-                                    <p>BootStrap</p>
-                                </div>
+                    </Section>
+                    {/* @ts-ignore */}
+                    <Section title="stack" ref={this.skillsRef}>
+                        <div className={classes.stackRow}>
+                            <div className={classes.stackItem}>
+                                <SiJavascript className={`${classes.stackIcon} ${classes.jsIcon}`} />
+                                <p>JavaScript</p>
                             </div>
-                        </Card>
-                    </div>
-                    <div ref={this.educationRef}>
-                        <SectionHeaderBar id="education" title="EDUCATION" />
-                    </div>
-                    <Container className="my-4">
-                        <Row>
-                            <Col xs={12}>
-                                <Card>
-                                    <div className="d-flex flex-column my-3 mx-3">
-                                        <a
-                                            rel="noopener noreferrer"
-                                            target="_blank"
-                                            href="http://www.lamar.edu"
-                                            className={classes.educationPrimary}
-                                        >
-                                            Lamar University
-                                        </a>
-                                        <p> Beaumont, TX</p>
-                                        <ul>
-                                            <li>B.A. in Psychology</li>
-                                            <li>Graduation Date: May 2016</li>
-                                        </ul>
-                                    </div>
-                                </Card>
-                            </Col>
-                        </Row>
-                    </Container>
-                    <div ref={this.contactRef}>
-                        <SectionHeaderBar id="contact" title="CONTACT" />
-                    </div>
-                    <Container>
-                        <Row>
-                            <Col xs={12}>
-                                <ContactItem
-                                    tooltip="Copy Email"
-                                    href="/"
-                                    linkText="dfrederick79@gmail.com"
-                                    icon={AiOutlineMail}
-                                    target="/"
-                                    onClick={(event) => {
-                                        event.preventDefault();
-                                        navigator.clipboard.writeText('dfrederick79@gmail.com');
-                                        alert('Email copied');
-                                    }}
-                                />
-                                <ContactItem
-                                    tooltip="Copy Phone Number"
-                                    href="/"
-                                    linkText="409-543-7859"
-                                    icon={AiOutlinePhone}
-                                    target="/"
-                                    onClick={(event) => {
-                                        event.preventDefault();
-                                        navigator.clipboard.writeText('409-543-7859');
-                                        alert('Phone number copied');
-                                    }}
-                                />
-                                <ContactItem
-                                    tooltip="View my GitHub"
-                                    href="https://github.com/david-r-frederick"
-                                    linkText="https://github.com/david-r-frederick"
-                                    icon={AiFillGithub}
-                                    target="blank"
-                                />
-                                <ContactItem
-                                    tooltip="View my LinkedIn Profile"
-                                    href="https://www.linkedin.com/in/david-frederick-413b30ab/"
-                                    linkText="https://www.linkedin.com/in/david-frederick-413b30ab/"
-                                    icon={AiFillLinkedin}
-                                    target="blank"
-                                />
-                                <ContactItem
-                                    tooltip="View my HackerRank"
-                                    href="https://www.hackerrank.com/dfrederick79?hr_r=1"
-                                    linkText="https://www.hackerrank.com/dfrederick79?hr_r=1"
-                                    icon={FaHackerrank}
-                                    target="blank"
-                                />
-                                <ContactItem
-                                    tooltip="View my Codewars Kata"
-                                    href="https://www.codewars.com/users/d-frederick"
-                                    linkText="https://www.codewars.com/users/d-frederick"
-                                    icon={SiCodewars}
-                                    target="blank"
-                                />
-                            </Col>
-                        </Row>
-                    </Container>
+                            <div className={classes.stackItem}>
+                                <SiCss3 className={`${classes.stackIcon} ${classes.cssIcon}`} />
+                                <p>CSS</p>
+                            </div>
+                            <div className={classes.stackItem}>
+                                <SiReact className={`${classes.stackIcon} ${classes.reactIcon}`} />
+                                <p>React</p>
+                            </div>
+                            <div className={classes.stackItem}>
+                                <SiHtml5 className={`${classes.stackIcon} ${classes.htmlIcon}`} />
+                                <p>HTML5</p>
+                            </div>
+                            <div className={classes.stackItem}>
+                                <SiBootstrap className={`${classes.stackIcon} ${classes.bootstrapIcon}`} />
+                                <p>BootStrap</p>
+                            </div>
+                        </div>
+                    </Section>
+                    {/* @ts-ignore */}
+                    <Section title="education" ref={this.educationRef}>
+                        <div className="d-flex flex-column my-3 mx-3">
+                            <a
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                href="http://www.lamar.edu"
+                                className={classes.educationPrimary}>
+                                Lamar University
+                            </a>
+                            <p> Beaumont, TX</p>
+                            <ul>
+                                <li>B.A. in Psychology</li>
+                                <li>Graduation Date: May 2016</li>
+                            </ul>
+                        </div>
+                    </Section>
+                    {/* @ts-ignore */}
+                    <Section title="contact" ref={this.contactRef}>
+                        <ContactItem
+                            tooltip="Copy Email"
+                            href="/"
+                            linkText="dfrederick79@gmail.com"
+                            icon={AiOutlineMail}
+                            target="/"
+                            onClick={(event) => {
+                                event.preventDefault();
+                                navigator.clipboard.writeText('dfrederick79@gmail.com');
+                                alert('Email copied');
+                            }}
+                        />
+                        <ContactItem
+                            tooltip="Copy Phone Number"
+                            href="/"
+                            linkText="409-543-7859"
+                            icon={AiOutlinePhone}
+                            target="/"
+                            onClick={(event) => {
+                                event.preventDefault();
+                                navigator.clipboard.writeText('409-543-7859');
+                                alert('Phone number copied');
+                            }}
+                        />
+                        <ContactItem
+                            tooltip="View my GitHub"
+                            href="https://github.com/david-r-frederick"
+                            linkText="https://github.com/david-r-frederick"
+                            icon={AiFillGithub}
+                            target="blank"
+                        />
+                        <ContactItem
+                            tooltip="View my LinkedIn Profile"
+                            href="https://www.linkedin.com/in/david-frederick-413b30ab/"
+                            linkText="https://www.linkedin.com/in/david-frederick-413b30ab/"
+                            icon={AiFillLinkedin}
+                            target="blank"
+                        />
+                        <ContactItem
+                            tooltip="View my HackerRank"
+                            href="https://www.hackerrank.com/dfrederick79?hr_r=1"
+                            linkText="https://www.hackerrank.com/dfrederick79?hr_r=1"
+                            icon={FaHackerrank}
+                            target="blank"
+                        />
+                        <ContactItem
+                            tooltip="View my Codewars Kata"
+                            href="https://www.codewars.com/users/d-frederick"
+                            linkText="https://www.codewars.com/users/d-frederick"
+                            icon={SiCodewars}
+                            target="blank"
+                        />
+                    </Section>
                 </div>
             </div>
         );
