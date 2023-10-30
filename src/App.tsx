@@ -243,7 +243,9 @@ class App extends React.Component<{}, IAppState> {
                         </Row>
                     </Section>
                     {/* @ts-ignore */}
-                    <Section title="stack" ref={this.skillsRef}>
+                    <Section ref={this.skillsRef}
+                        title="stack"
+                        asCard={true}>
                         <div className={classes.stackRow}>
                             <div className={classes.stackItem}>
                                 <SiJavascript className={`${classes.stackIcon} ${classes.jsIcon}`} />
@@ -268,7 +270,9 @@ class App extends React.Component<{}, IAppState> {
                         </div>
                     </Section>
                     {/* @ts-ignore */}
-                    <Section title="education" ref={this.educationRef}>
+                    <Section ref={this.educationRef}
+                        title="education"
+                        asCard={true}>
                         <div className="d-flex flex-column my-3 mx-3">
                             <a
                                 rel="noopener noreferrer"
