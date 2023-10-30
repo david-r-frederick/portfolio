@@ -1,0 +1,30 @@
+.experienceContent {
+    position: relative;
+}
+
+.experienceContent::after {
+    position: absolute;
+    content: '';
+    bottom: -1.5rem;
+    left: 2.5%;
+    width: 95%;
+    height: 1%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.experienceImg {
+    width: 20%;
+    max-height: 12rem;
+    margin-right: 1.6rem;
+}
+
+.experienceBullet {
+    line-height: 3.2rem;
+}
+
+@media (max-width: 550px) {
+    .expText {
+        display: flex;
+        flex-direction: column;
+    }
+}

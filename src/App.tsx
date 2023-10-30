@@ -17,6 +17,7 @@ import TXARNGImg from "./assets/img/TXARNG.svg";
 import Project from "./components/Project/Project";
 import Card from "./components/Card/Card";
 import "./scss/index.scss";
+import ExperienceCard from "./components/ExperienceCard/ExperienceCard";
 
 interface IAppState {
     sidebarTogg: boolean;
@@ -114,147 +115,83 @@ class App extends React.Component<{}, IAppState> {
                         <SectionHeaderBar id="experience" title="EXPERIENCE" />
                     </div>
                     <Container className="my-4">
-                        <Card>
-                            <div className="my-3 mx-3">
-                                <div className={`d-flex flex-row ${classes.experienceContent}`}>
-                                    <img
-                                        className={classes.experienceImg}
-                                        src={LamarUniversityImg}
-                                        alt="Lamar University Logo" />
-                                    <div
-                                        className={`d-flex align-items-center justify-content-between w-100 mx-3 ${classes.expText}`}>
-                                        <h2>Lamar University</h2>
-                                        <h4>Tech Support &#38; Admin. Specialist</h4>
-                                    </div>
-                                </div>
-                                <br />
-                                <div>
-                                    <p>
-                                        <i>
-                                            State university specializing in engineering that offers bachelor's,
-                                            master's, and doctorate level degrees.
-                                        </i>
-                                    </p>
-                                    <h4>
-                                        Headed 4 direct reports and oversaw day-to-day technical and administrative
-                                        operations of the Office of International Education and Services.
-                                    </h4>
-                                    <br />
-                                    <h5>MEDIA &amp; WEB SUPPORT</h5>
-                                    <ul>
-                                        <li className={classes.experienceBullet}>
-                                            Collaborated with department decision-makers, analyzed existing websites for
-                                            areas needing improvement, gathered requirements and desired website
-                                            functionalities, and planning framework and content of new sites
-                                        </li>
-                                        <li className={classes.experienceBullet}>
-                                            Employed Cascade CMS to design, develop, and maintain 4 new department
-                                            websites
-                                        </li>
-                                        <li className={classes.experienceBullet}>
-                                            Coordinated with support staff on the development of digital copy for dozens
-                                            of new web pages
-                                        </li>
-                                    </ul>
-                                    <br />
-                                    <h5>ADMINISTRATIVE SUPPORT</h5>
-                                    <ul>
-                                        <li className={classes.experienceBullet}>
-                                            Used Formstack and Google Forms to create, manage, and distribute over 35
-                                            forms covering student specialization changes, special requests, transfers,
-                                            and work authorizations.
-                                        </li>
-                                        <li className={classes.experienceBullet}>
-                                            Handled logistics and inventory management, supported budget monitoring
-                                            and management activities, interviewed, and recruited support staff, and
-                                            orchestrated over 50 biannual events
-                                        </li>
-                                    </ul>
-                                    <br />
-                                    <p>Sep 2018 - Apr 2020 | Beaumont, TX</p>
-                                </div>
-                            </div>
-                        </Card>
-                        <Card>
-                            <div className="my-3 mx-3">
-                                <div className={`d-flex flex-row ${classes.experienceContent}`}>
-                                    <img
-                                        className={classes.experienceImg}
-                                        src={LamarUniversityImg}
-                                        alt="Lamar University Logo"
-                                    />
-                                    <div
-                                        className={`d-flex align-items-center justify-content-between w-100 mx-3 ${classes.expText}`}
-                                    >
-                                        <h2>Lamar University</h2>
-                                        <h4>Computer Lab Technician</h4>
-                                    </div>
-                                </div>
-                                <br />
-                                <div>
-                                    <p>
-                                        <i>
-                                            State university specializing in engineering that offers bachelor's,
-                                            master's, and doctorate level degrees.
-                                        </i>
-                                    </p>
-                                    <h5>LOCAL IT SUPPORT</h5>
-                                    <ul>
-                                        <li>
-                                            Provided on-site IT services by diagnosing and resolving software and
-                                            hardware issues of department computers for students, faculty, and staff
-                                        </li>
-                                        <li>
-                                            Oversaw technology in classrooms and the office to include projectors,
-                                            copiers, printers, scanners, and computers
-                                        </li>
-                                        <li>
-                                            Delivered excellent customer service by warmly greeting visitors, actively
-                                            listening to needs, and asking for clarification when necessary
-                                        </li>
-                                    </ul>
-                                    <br />
-                                    <p>Sep 2012 - May 2016 | Beaumont, TX</p>
-                                </div>
-                            </div>
-                        </Card>
-                        <Card>
-                            <div className="my-3 mx-3">
-                                <div className={`d-flex flex-row ${classes.experienceContent}`}>
-                                    <img
-                                        className={classes.experienceImg}
-                                        src={TXARNGImg}
-                                        alt="Texas Army National Guard Logo"
-                                    />
-                                    <div
-                                        className={`d-flex align-items-center justify-content-between w-100 mx-3 ${classes.expText}`}
-                                    >
-                                        <h2>Texas Army National Guard</h2>
-                                        <h4>Chaplain Assistant</h4>
-                                    </div>
-                                </div>
-                                <br />
-                                <div>
-                                    <p>
-                                        <i>United States Military Branch specializing in ground operations.</i>
-                                    </p>
-                                    <h5>RELIGIOUS SUPPORT</h5>
-                                    <ul>
-                                        <li className={classes.experienceBullet}>
-                                            Presented to executive staff on company morale, religions, and needs
-                                        </li>
-                                        <li className={classes.experienceBullet}>
-                                            Prepared for and helped to execute Sunday services
-                                        </li>
-                                        <li className={classes.experienceBullet}>
-                                            Cared for soldiers through prayers and visiting injured in hospital
-                                        </li>
-                                    </ul>
-                                    <br />
-                                    <p>Feb 2008 - Mar 2014 | Houston, TX</p>
-                                </div>
-                            </div>
-                        </Card>
+                        <ExperienceCard
+                            imgSrc={LamarUniversityImg}
+                            imgAlt="Lamar University Logo"
+                            company="Lamar University"
+                            role="Tech Support & Admin. Specialist"
+                            companyDescription="State university specializing in engineering that offers bachelor's,
+                            master's, and doctorate level degrees."
+                            experience={[
+                                {
+                                    title: "Media & web support",
+                                    points: [
+                                        `Collaborated with department decision-makers, analyzed existing websites for
+                                        areas needing improvement, gathered requirements and desired website
+                                        functionalities, and planning framework and content of new sites`,
+                                        `Employed Cascade CMS to design, develop, and maintain 4 new department
+                                        websites`,
+                                        `Coordinated with support staff on the development of digital copy for dozens
+                                        of new web pages`
+                                    ]
+                                },
+                                {
+                                    title: "Administrative support",
+                                    points: [
+                                        `Used Formstack and Google Forms to create, manage, and distribute over 35
+                                        forms covering student specialization changes, special requests, transfers,
+                                        and work authorizations.`,
+                                        `Handled logistics and inventory management, supported budget monitoring
+                                        and management activities, interviewed, and recruited support staff, and
+                                        orchestrated over 50 biannual events`
+                                    ]
+                                }
+                            ]}
+                            startMonthYear="Sep 2018"
+                            endMonthYear="Apr 2020"
+                            location="Beaumont, TX" />
+                        <ExperienceCard
+                            imgSrc={LamarUniversityImg}
+                            imgAlt="Lamar University Logo"
+                            company="Lamar University"
+                            role="Computer Lab Technician"
+                            companyDescription="State university specializing in engineering that offers bachelor's,
+                            master's, and doctorate level degrees."
+                            experience={[
+                                {
+                                    title: "Local IT support",
+                                    points: [
+                                        `Provided on-site IT services by diagnosing and resolving software and
+                                        hardware issues of department computers for students, faculty, and staff`,
+                                        `Oversaw technology in classrooms and the office to include projectors,
+                                        copiers, printers, scanners, and computers`,
+                                        `Delivered excellent customer service by warmly greeting visitors, actively
+                                        listening to needs, and asking for clarification when necessary`
+                                    ]
+                                }
+                            ]}
+                            startMonthYear="Sep 2012"
+                            endMonthYear="May 2016"
+                            location="Beaumont, TX" />
+                        <ExperienceCard
+                            imgSrc={TXARNGImg}
+                            imgAlt="Texas Army National Guard Logo"
+                            company="Texas Army National Guard"
+                            role="Chaplain Assistant"
+                            companyDescription="United States Military Branch specializing in ground operations."
+                            experience={[
+                                {
+                                    title: "Religious support",
+                                    points: [
+                                        `Presented to executive staff on company morale, religions, and needs`,
+                                        `Prepared for and helped to execute Sunday services`,
+                                        `Cared for soldiers through prayers and visiting injured in hospital`
+                                    ]
+                                }
+                            ]}
+                            startMonthYear="Feb 2008"
+                            endMonthYear="Mar 2014"
+                            location="Houston, TX" />
                     </Container>
                     <div ref={this.projectsRef}>
                         <SectionHeaderBar title="PROJECTS" />
