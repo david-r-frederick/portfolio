@@ -1,18 +1,3 @@
-.contactRow {
-  display: flex;
-  align-items: center;
-}
-
-.contactRow a {
-  color: maroon;
-}
-
-.iconWrapper {
-  color: black;
-  border-radius: 50px;
-  position: relative;
-}
-
 .iconWrapper[dataToolTip]::before {
   content: attr(dataToolTip);
   position: absolute;

@@ -1,22 +1,37 @@
-import React from 'react';
-import SideBar from './components/SideBar/SideBar';
-import SectionHeaderBar from './components/SectionHeaderBar/SectionHeaderBar';
-import classes from './App.module.css';
-import { AiOutlineMail, AiOutlinePhone, AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import { FaHackerrank } from 'react-icons/fa';
-import { SiBootstrap, SiCodewars, SiCss3, SiHtml5, SiJavascript, SiReact } from 'react-icons/si';
-import BurgerBuilderImg from './assets/img/BurgerBuilderBig.png';
-import OmnifoodImg from './assets/img/OmnifoodBig.png';
-import BugTrackerImg from './assets/img/BugTrackerBig.png';
-import WeatherAppImg from './assets/img/WeatherAppBig.png';
-import ContactItem from './components/ContactItem/ContactItem';
-import Card from './components/Card/Card';
-import LamarUniversityImg from './assets/img/LamarUniversity.jpg';
-import TXARNGImg from './assets/img/TXARNG.svg';
-import Project from './components/Project/Project';
+import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import SideBar from "./components/SideBar/SideBar";
+import SectionHeaderBar from "./components/SectionHeaderBar/SectionHeaderBar";
+import classes from "./App.module.css";
+import { AiOutlineMail, AiOutlinePhone, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { FaHackerrank } from "react-icons/fa";
+import { SiBootstrap, SiCodewars, SiCss3, SiHtml5, SiJavascript, SiReact } from "react-icons/si";
+import BurgerBuilderImg from "./assets/img/BurgerBuilderBig.png";
+import OmnifoodImg from "./assets/img/OmnifoodBig.png";
+import BugTrackerImg from "./assets/img/BugTrackerBig.png";
+import CSSPressMeImg from "./assets/img/CSSPressMeBig.png";
+import WeatherAppImg from "./assets/img/WeatherAppBig.png";
+import ContactItem from "./components/ContactItem/ContactItem";
+import LamarUniversityImg from "./assets/img/LamarUniversity.jpg";
+import TXARNGImg from "./assets/img/TXARNG.svg";
+import Project from "./components/Project/Project";
+import Card from "./components/Card/Card";
+import "./scss/index.scss";
 
-class App extends React.Component {
-    constructor(props) {
+interface IAppState {
+    sidebarTogg: boolean;
+}
+
+class App extends React.Component<{}, IAppState> {
+    aboutRef: React.LegacyRef<HTMLDivElement> | null = null;
+    experienceRef: React.LegacyRef<HTMLDivElement> | null = null;
+    projectsRef: React.LegacyRef<HTMLDivElement> | null = null;
+    skillsRef: React.LegacyRef<HTMLDivElement> | null = null;
+    educationRef: React.LegacyRef<HTMLDivElement> | null = null;
+    contactRef: React.LegacyRef<HTMLDivElement> | null = null;
+    resumeRef: React.LegacyRef<HTMLDivElement> | null = null;
+
+    constructor(props: {}) {
         super(props);
         this.aboutRef = React.createRef();
         this.experienceRef = React.createRef();
@@ -24,6 +39,7 @@ class App extends React.Component {
         this.skillsRef = React.createRef();
         this.educationRef = React.createRef();
         this.contactRef = React.createRef();
+        this.resumeRef = React.createRef();
         this.state = {
             sidebarTogg: false,
         };
@@ -42,14 +58,16 @@ class App extends React.Component {
     };
 
     render() {
-        const { aboutRef, experienceRef, projectsRef, skillsRef, educationRef, contactRef } = this;
+        const { aboutRef, experienceRef, projectsRef, skillsRef, educationRef, contactRef, resumeRef } = this;
 
         return (
             <div className={classes.App}>
                 <SideBar
                     refs={{ aboutRef, experienceRef, projectsRef, skillsRef, educationRef, contactRef }}
                     toggled={this.state.sidebarTogg}
-                    closeSideBar={this.closeSideBar}
+                    closeSidebar={() => {
+                        this.closeSideBar();
+                    }}
                 />
                 {this.state.sidebarTogg ? <div onClick={this.closeSideBar} className={classes.blackCover}></div> : null}
                 <div className={classes.topBar}>
@@ -95,18 +113,16 @@ class App extends React.Component {
                     <div ref={this.experienceRef}>
                         <SectionHeaderBar id="experience" title="EXPERIENCE" />
                     </div>
-                    <div className="container my-4">
+                    <Container className="my-4">
                         <Card>
                             <div className="my-3 mx-3">
                                 <div className={`d-flex flex-row ${classes.experienceContent}`}>
                                     <img
                                         className={classes.experienceImg}
                                         src={LamarUniversityImg}
-                                        alt="Lamar University Logo"
-                                    />
+                                        alt="Lamar University Logo" />
                                     <div
-                                        className={`d-flex align-items-center justify-content-between w-100 mx-3 ${classes.expText}`}
-                                    >
+                                        className={`d-flex align-items-center justify-content-between w-100 mx-3 ${classes.expText}`}>
                                         <h2>Lamar University</h2>
                                         <h4>Tech Support &#38; Admin. Specialist</h4>
                                     </div>
@@ -239,46 +255,59 @@ class App extends React.Component {
                                 </div>
                             </div>
                         </Card>
-                    </div>
+                    </Container>
                     <div ref={this.projectsRef}>
                         <SectionHeaderBar title="PROJECTS" />
                     </div>
-                    <div className="row d-flex justify-content-around my-4">
-                        <Project
-                            title="Bug Tracker"
-                            technologies="React JS, BootStrap, Firebase"
-                            codeHref="https://github.com/david-r-frederick/bug-tracker"
-                            projectHref="https://bug-tracker-6ea40.web.app/login"
-                            projectImage={BugTrackerImg}
-                            altMessage="Bug Tracker project image"
-                        />
-                        <Project
-                            title="Burger Builder"
-                            technologies="React JS, Firebase"
-                            codeHref="https://github.com/david-r-frederick/burger-builder-demo"
-                            projectHref="https://react-my-burger-fc3a1.web.app/"
-                            projectImage={BurgerBuilderImg}
-                            altMessage="Weather app project image"
-                        />
-                    </div>
-                    <div className="row d-flex justify-content-around my-4">
-                        <Project
-                            title="Omnifood"
-                            technologies="HTML, CSS, jQuery"
-                            codeHref="https://github.com/david-r-frederick/omnifood-website-demo"
-                            projectHref="https://david-r-frederick.github.io/omnifood-website-demo/"
-                            projectImage={OmnifoodImg}
-                            altMessage="Omnifood project image"
-                        />
-                        <Project
-                            title="Weather App"
-                            technologies="React JS"
-                            codeHref="https://github.com/david-r-frederick/personal-react-demos/tree/master/weather-app-demo"
-                            projectHref="https://weather-app-3b941.web.app/current"
-                            projectImage={WeatherAppImg}
-                            altMessage="Weather app project image"
-                        />
-                    </div>
+                    <Container>
+                        <Row className="my-4">
+                            <Col xs={12} md={6}>
+                                <Project
+                                    title="CSS Press Me"
+                                    technologies="CSS, React JS"
+                                    codeHref="https://github.com/david-r-frederick/css-press-me"
+                                    projectHref="https://csspressme.web.app/"
+                                    projectImage={CSSPressMeImg}
+                                    altMessage="CSS Press Me project image" />
+                            </Col>
+                            <Col xs={12} md={6}>
+                                <Project
+                                    title="Bug Tracker"
+                                    technologies="React JS, BootStrap, Firebase"
+                                    codeHref="https://github.com/david-r-frederick/bug-tracker"
+                                    projectHref="https://bug-tracker-6ea40.web.app/login"
+                                    projectImage={BugTrackerImg}
+                                    altMessage="Bug Tracker project image" />
+                            </Col>
+                            <Col xs={12} md={6}>
+                                <Project
+                                    title="Burger Builder"
+                                    technologies="React JS, Firebase"
+                                    codeHref="https://github.com/david-r-frederick/burger-builder-demo"
+                                    projectHref="https://react-my-burger-fc3a1.web.app/"
+                                    projectImage={BurgerBuilderImg}
+                                    altMessage="Weather app project image" />
+                            </Col>
+                            <Col xs={12} md={6}>
+                                <Project
+                                    title="Omnifood"
+                                    technologies="HTML, CSS, jQuery"
+                                    codeHref="https://github.com/david-r-frederick/omnifood-website-demo"
+                                    projectHref="https://david-r-frederick.github.io/omnifood-website-demo/"
+                                    projectImage={OmnifoodImg}
+                                    altMessage="Omnifood project image" />
+                            </Col>
+                            <Col xs={12} md={6}>
+                                <Project
+                                    title="Weather App"
+                                    technologies="React JS"
+                                    codeHref="https://github.com/david-r-frederick/personal-react-demos/tree/master/weather-app-demo"
+                                    projectHref="https://weather-app-3b941.web.app/current"
+                                    projectImage={WeatherAppImg}
+                                    altMessage="Weather app project image" />
+                            </Col>
+                        </Row>
+                    </Container>
                     <div ref={this.skillsRef}>
                         <SectionHeaderBar id="stack" title="STACK" />
                     </div>
@@ -311,84 +340,90 @@ class App extends React.Component {
                     <div ref={this.educationRef}>
                         <SectionHeaderBar id="education" title="EDUCATION" />
                     </div>
-                    <div className="container my-4">
-                        <Card>
-                            <div className="my-3 mx-3">
-                                <div className={`d-flex flex-column`}>
-                                    <a
-                                        rel="noopener noreferrer"
-                                        target="_blank"
-                                        href="http://www.lamar.edu"
-                                        className={classes.educationPrimary}
-                                    >
-                                        Lamar University
-                                    </a>
-                                    <p> Beaumont, TX</p>
-                                    <ul>
-                                        <li>B.A. in Psychology</li>
-                                        <li>Graduation Date: May 2016</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </Card>
-                    </div>
+                    <Container className="my-4">
+                        <Row>
+                            <Col xs={12}>
+                                <Card>
+                                    <div className="d-flex flex-column my-3 mx-3">
+                                        <a
+                                            rel="noopener noreferrer"
+                                            target="_blank"
+                                            href="http://www.lamar.edu"
+                                            className={classes.educationPrimary}
+                                        >
+                                            Lamar University
+                                        </a>
+                                        <p> Beaumont, TX</p>
+                                        <ul>
+                                            <li>B.A. in Psychology</li>
+                                            <li>Graduation Date: May 2016</li>
+                                        </ul>
+                                    </div>
+                                </Card>
+                            </Col>
+                        </Row>
+                    </Container>
                     <div ref={this.contactRef}>
                         <SectionHeaderBar id="contact" title="CONTACT" />
                     </div>
-                    <div>
-                        <ContactItem
-                            tooltip="Copy Email"
-                            href="/"
-                            linkText="dfrederick79@gmail.com"
-                            icon={AiOutlineMail}
-                            target="/"
-                            onClick={(event) => {
-                                event.preventDefault();
-                                navigator.clipboard.writeText('dfrederick79@gmail.com');
-                                alert('Email copied');
-                            }}
-                        />
-                        <ContactItem
-                            tooltip="Copy Phone Number"
-                            href="/"
-                            linkText="409-543-7859"
-                            icon={AiOutlinePhone}
-                            target="/"
-                            onClick={(event) => {
-                                event.preventDefault();
-                                navigator.clipboard.writeText('409-543-7859');
-                                alert('Phone number copied');
-                            }}
-                        />
-                        <ContactItem
-                            tooltip="View my GitHub"
-                            href="https://github.com/david-r-frederick"
-                            linkText="https://github.com/david-r-frederick"
-                            icon={AiFillGithub}
-                            target="blank"
-                        />
-                        <ContactItem
-                            tooltip="View my LinkedIn Profile"
-                            href="https://www.linkedin.com/in/david-frederick-413b30ab/"
-                            linkText="https://www.linkedin.com/in/david-frederick-413b30ab/"
-                            icon={AiFillLinkedin}
-                            target="blank"
-                        />
-                        <ContactItem
-                            tooltip="View my HackerRank"
-                            href="https://www.hackerrank.com/dfrederick79?hr_r=1"
-                            linkText="https://www.hackerrank.com/dfrederick79?hr_r=1"
-                            icon={FaHackerrank}
-                            target="blank"
-                        />
-                        <ContactItem
-                            tooltip="View my Codewars Kata"
-                            href="https://www.codewars.com/users/d-frederick"
-                            linkText="https://www.codewars.com/users/d-frederick"
-                            icon={SiCodewars}
-                            target="blank"
-                        />
-                    </div>
+                    <Container>
+                        <Row>
+                            <Col xs={12}>
+                                <ContactItem
+                                    tooltip="Copy Email"
+                                    href="/"
+                                    linkText="dfrederick79@gmail.com"
+                                    icon={AiOutlineMail}
+                                    target="/"
+                                    onClick={(event) => {
+                                        event.preventDefault();
+                                        navigator.clipboard.writeText('dfrederick79@gmail.com');
+                                        alert('Email copied');
+                                    }}
+                                />
+                                <ContactItem
+                                    tooltip="Copy Phone Number"
+                                    href="/"
+                                    linkText="409-543-7859"
+                                    icon={AiOutlinePhone}
+                                    target="/"
+                                    onClick={(event) => {
+                                        event.preventDefault();
+                                        navigator.clipboard.writeText('409-543-7859');
+                                        alert('Phone number copied');
+                                    }}
+                                />
+                                <ContactItem
+                                    tooltip="View my GitHub"
+                                    href="https://github.com/david-r-frederick"
+                                    linkText="https://github.com/david-r-frederick"
+                                    icon={AiFillGithub}
+                                    target="blank"
+                                />
+                                <ContactItem
+                                    tooltip="View my LinkedIn Profile"
+                                    href="https://www.linkedin.com/in/david-frederick-413b30ab/"
+                                    linkText="https://www.linkedin.com/in/david-frederick-413b30ab/"
+                                    icon={AiFillLinkedin}
+                                    target="blank"
+                                />
+                                <ContactItem
+                                    tooltip="View my HackerRank"
+                                    href="https://www.hackerrank.com/dfrederick79?hr_r=1"
+                                    linkText="https://www.hackerrank.com/dfrederick79?hr_r=1"
+                                    icon={FaHackerrank}
+                                    target="blank"
+                                />
+                                <ContactItem
+                                    tooltip="View my Codewars Kata"
+                                    href="https://www.codewars.com/users/d-frederick"
+                                    linkText="https://www.codewars.com/users/d-frederick"
+                                    icon={SiCodewars}
+                                    target="blank"
+                                />
+                            </Col>
+                        </Row>
+                    </Container>
                 </div>
             </div>
         );
