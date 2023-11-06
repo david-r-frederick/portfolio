@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.7b72caf7.css",
+    "main.js": "/portfolio/static/js/main.405b17a1.js",
+    "static/media/ResumeDavidFrederick.pdf": "/portfolio/static/media/ResumeDavidFrederick.a069c4ce64c863f42772.pdf",
+    "static/media/CSSPressMeBig.png": "/portfolio/static/media/CSSPressMeBig.60c4e083ee846cbd5556.png",
+    "static/media/LamarUniversity.jpg": "/portfolio/static/media/LamarUniversity.f6b18e87ebcd69e66c1f.jpg",
+    "static/media/BurgerBuilderBig.png": "/portfolio/static/media/BurgerBuilderBig.277f0b7f03304bd1c3f7.png",
+    "static/media/OmnifoodBig.png": "/portfolio/static/media/OmnifoodBig.fac396513abaf4a64030.png",
+    "static/media/BugTrackerBig.png": "/portfolio/static/media/BugTrackerBig.2b0144c0cae84bfaf796.png",
+    "static/media/TXARNG.svg": "/portfolio/static/media/TXARNG.d489abc41bbbf92c4732596ba666c59e.svg",
+    "index.html": "/portfolio/index.html",
+    "main.7b72caf7.css.map": "/portfolio/static/css/main.7b72caf7.css.map",
+    "main.405b17a1.js.map": "/portfolio/static/js/main.405b17a1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b72caf7.css",
+    "static/js/main.405b17a1.js"
+  ]
+}
