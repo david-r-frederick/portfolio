@@ -2,73 +2,10 @@ html {
   font-size: 10px;
 }
 
-.App {
-  display: flex;
-}
-
-h1 {
-  font-size: 3.2rem;
-}
-
-h2 {
-  font-size: 2.4rem;
-}
-
-h3 {
-  font-size: 1.8rem;
-}
-
-h4,
-li {
-  font-size: 1.6rem;
-}
-
-p,
-a {
-  font-size: 1.4rem;
-}
-
 .sectionsContainer {
   width: 100%;
   transition: margin-left 300ms ease-in 0ms, margin-top 300ms ease-in;
   margin-left: 19.2rem;
-}
-
-.text {
-  font-size: 2.5rem;
-}
-
-.educationPrimary {
-  font-size: 3.2rem;
-  color: maroon;
-}
-
-.educationPrimary:hover {
-  color: maroon;
-}
-
-.stackRow {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 12rem;
-  width: 100%;
-}
-
-.stackItem {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 10%;
-}
-
-.stackItem p {
-  margin-top: 1rem;
-  margin-bottom: 0;
-  color: maroon;
-  font-size: 2.1rem;
 }
 
 .stackIcon {
@@ -95,6 +32,10 @@ a {
 
 .bootstrapIcon {
   color: purple;
+}
+
+.cSharpIcon {
+  color: #009404;
 }
 
 .about {
@@ -127,10 +68,6 @@ a {
 .meBox {
   text-align: center;
   padding-top: 1rem;
-}
-
-.name {
-  color: maroon;
 }
 
 .jobTitle {
@@ -184,20 +121,5 @@ a {
   .stackIcon {
     width: 3rem;
     height: 3rem;
-  }
-
-  html {
-    font-size: 9px;
-  }
-}
-
-@media (max-width: 440px) {
-  .stackRow {
-    flex-direction: column;
-    height: fit-content;
-  }
-
-  .stackIcon {
-    margin-top: 10px;
   }
 }

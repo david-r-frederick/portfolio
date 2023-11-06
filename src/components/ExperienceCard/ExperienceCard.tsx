@@ -39,8 +39,8 @@ export const ExperienceCard = (props: IExperienceCardProps): JSX.Element => {
                     alt={imgAlt} />
                 <div
                     className={`d-flex align-items-center justify-content-between w-100 mx-3 ${classes.expText}`}>
-                    <h2>{company}</h2>
-                    <h4>{role}</h4>
+                    <h2 className="h5">{company}</h2>
+                    <h4 className="h6">{role}</h4>
                 </div>
             </div>
             <br />
@@ -51,7 +51,7 @@ export const ExperienceCard = (props: IExperienceCardProps): JSX.Element => {
                 {experience && experience.map(({ title, points }) => {
                     return <Fragment key={title}>
                         <br />
-                        <h5 className="text-uppercase">{title}</h5>
+                        <h5 className="text-uppercase h6 small">{title}</h5>
                         <ul>
                             {points.map(p => (
                                 <li className={classes.experienceBullet}>{p}</li>

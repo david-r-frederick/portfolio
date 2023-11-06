@@ -1,21 +1,21 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import SideBar from "./components/SideBar/SideBar";
 import SectionHeaderBar from "./components/SectionHeaderBar/SectionHeaderBar";
 import classes from "./App.module.css";
 import { AiOutlineMail, AiOutlinePhone, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { FaHackerrank } from "react-icons/fa";
-import { SiCodewars, SiBootstrap, SiCss3, SiHtml5, SiJavascript, SiReact } from "react-icons/si";
+import { SiCodewars, SiBootstrap, SiCss3, SiHtml5, SiJavascript, SiReact, SiCsharp } from "react-icons/si";
 import BurgerBuilderImg from "./assets/img/BurgerBuilderBig.png";
 import OmnifoodImg from "./assets/img/OmnifoodBig.png";
 import BugTrackerImg from "./assets/img/BugTrackerBig.png";
 import CSSPressMeImg from "./assets/img/CSSPressMeBig.png";
-import WeatherAppImg from "./assets/img/WeatherAppBig.png";
+// import WeatherAppImg from "./assets/img/WeatherAppBig.png";
 import ContactItem from "./components/ContactItem/ContactItem";
 import LamarUniversityImg from "./assets/img/LamarUniversity.jpg";
 import TXARNGImg from "./assets/img/TXARNG.svg";
+import ClarityVenturesImg from "./assets/img/CVI.jpg"
 import Project from "./components/Project/Project";
-import Card from "./components/Card/Card";
 import "./scss/index.scss";
 import ExperienceCard from "./components/ExperienceCard/ExperienceCard";
 import { Section } from "./components/Section/Section";
@@ -63,7 +63,7 @@ class App extends React.Component<{}, IAppState> {
         const { aboutRef, experienceRef, projectsRef, skillsRef, educationRef, contactRef, resumeRef } = this;
 
         return (
-            <div className={classes.App}>
+            <div className="d-flex">
                 <SideBar
                     refs={{ aboutRef, experienceRef, projectsRef, skillsRef, educationRef, contactRef }}
                     toggled={this.state.sidebarTogg}
@@ -74,7 +74,7 @@ class App extends React.Component<{}, IAppState> {
                 {this.state.sidebarTogg ? <div onClick={this.closeSideBar} className={classes.blackCover}></div> : null}
                 <div className={classes.topBar}>
                     <div className={classes.meBox}>
-                        <h2 className={classes.name}>
+                        <h2 className="text-primary h5">
                             David
                             <br />
                             Frederick
@@ -82,38 +82,71 @@ class App extends React.Component<{}, IAppState> {
                         <p className={classes.jobTitle}>Front-End Developer</p>
                     </div>
                 </div>
-                <button
-                    className={classes.hamburgerButton}
+                <Button
+                    variant="default"
+                    className={`${classes.hamburgerButton} bg-dark-subtle`}
                     onClick={() =>
                         this.setState((prevState) => {
                             return {
                                 sidebarTogg: !prevState.sidebarTogg,
                             };
                         })
-                    }
-                >
+                    }>
                     <div className={classes.line}></div>
                     <div className={classes.line}></div>
                     <div className={classes.line}></div>
-                </button>
+                </Button>
                 <div className={classes.sectionsContainer}>
                     <div ref={this.aboutRef}>
                         <SectionHeaderBar id="about" title="ABOUT" />
                     </div>
                     <div className={`container ${classes.about}`}>
-                        <p className={classes.text}>
-                            I graduated in 2016 with my Bachelor's degree in psychology and have decided to leverage
-                            that experience towards front-end development, using what I know of how people think to
-                            create great experiences for them. I enjoy working with Javascript and React the most, but
-                            am constantly improving by learning other languages and frameworks. I am currently learning
-                            React Native and SQL. <br />
-                            <br /> I worked in an IT environment for four years during college and spent a majority of
-                            my time in my previous roll working on digital design and handling technology aspects of the
-                            office- to include rebuilding their website. To view my rebuild, click here.
+                        <p className="h3 fw-normal mb-5">
+                            I'm an experienced software developer leveraging my background in psychology and IT to build responsive and interactive web applications that provide a great user experience.
+                            I've spent the last 3 years dedicated to building enterprise eCommerce websites of varying degrees of complexity and size.
+                            I enjoy working with Javascript and React the most, but am constantly improving by learning other languages and frameworks.
+                        </p>
+                        <p className="h3 fw-normal mb-0">
+                            To view an example of my work,{" "}
+                            <a target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://rapidsonwheels.com/"
+                                className="text-black h3 fw-normal">
+                                click here
+                            </a>.
                         </p>
                     </div>
                     {/* @ts-ignore */}
                     <Section title="experience" ref={this.experienceRef}>
+                        <ExperienceCard
+                            imgSrc={ClarityVenturesImg}
+                            imgAlt="Clarity Ventures, Inc logo"
+                            company="Clarity Ventures, Inc"
+                            role="Front End Developer & Technical Lead"
+                            companyDescription="Software development company focused on custom eCommerce websites and integration."
+                            experience={[
+                                {
+                                    title: "Front End Developer",
+                                    points: [
+                                        `Wrote efficient front end code for dozens of modern, dynamic, and user-friendly enterprise eCommerce websites (includes HIPAA) using React, AngularJS, and DotNet Nuke's CMS`,
+                                        `Collaborated with project managers, clients, and fellow team members to manage expectations and implement optimal solutions`,
+                                        `Followed data as it flows through front and back end of the application to debug complex problems`,
+                                        `Built out back end endpoints and workflows on an as-needed basis in .NET`
+                                    ]
+                                },
+                                {
+                                    title: "Technical Lead",
+                                    points: [
+                                        `Initial build out and continued maintenance of junior and mid-level front end developer certification programs`,
+                                        `Lead regular paired programming sessions to assist new developers' on-boarding process`,
+                                        `Spearhead migration of front end codebase from AngularJS (1.6) to React 17`,
+                                        `Remained up to date on React, JavaScript, css, etc. through weekly trainings and personal study`
+                                    ]
+                                }
+                            ]}
+                            startMonthYear="Feb 2021"
+                            endMonthYear="Present"
+                            location="Remote (company based in Austin, TX)" />
                         <ExperienceCard
                             imgSrc={LamarUniversityImg}
                             imgAlt="Lamar University Logo"
@@ -202,7 +235,7 @@ class App extends React.Component<{}, IAppState> {
                                     codeHref="https://github.com/david-r-frederick/css-press-me"
                                     projectHref="https://csspressme.web.app/"
                                     projectImage={CSSPressMeImg}
-                                    altMessage="CSS Press Me project image" />
+                                    altMessage="CSS Press Me project" />
                             </Col>
                             <Col xs={12} md={6}>
                                 <Project
@@ -211,7 +244,7 @@ class App extends React.Component<{}, IAppState> {
                                     codeHref="https://github.com/david-r-frederick/bug-tracker"
                                     projectHref="https://bug-tracker-6ea40.web.app/login"
                                     projectImage={BugTrackerImg}
-                                    altMessage="Bug Tracker project image" />
+                                    altMessage="Bug Tracker project" />
                             </Col>
                             <Col xs={12} md={6}>
                                 <Project
@@ -220,7 +253,7 @@ class App extends React.Component<{}, IAppState> {
                                     codeHref="https://github.com/david-r-frederick/burger-builder-demo"
                                     projectHref="https://react-my-burger-fc3a1.web.app/"
                                     projectImage={BurgerBuilderImg}
-                                    altMessage="Weather app project image" />
+                                    altMessage="Burger builder app project" />
                             </Col>
                             <Col xs={12} md={6}>
                                 <Project
@@ -229,45 +262,64 @@ class App extends React.Component<{}, IAppState> {
                                     codeHref="https://github.com/david-r-frederick/omnifood-website-demo"
                                     projectHref="https://david-r-frederick.github.io/omnifood-website-demo/"
                                     projectImage={OmnifoodImg}
-                                    altMessage="Omnifood project image" />
+                                    altMessage="Omnifood project" />
                             </Col>
-                            <Col xs={12} md={6}>
-                                <Project
-                                    title="Weather App"
-                                    technologies="React JS"
-                                    codeHref="https://github.com/david-r-frederick/personal-react-demos/tree/master/weather-app-demo"
-                                    projectHref="https://weather-app-3b941.web.app/current"
-                                    projectImage={WeatherAppImg}
-                                    altMessage="Weather app project image" />
-                            </Col>
+                            {/*
+                                TODO, API changed
+                                <Col xs={12} md={6}>
+                                    <Project
+                                        title="Weather App"
+                                        technologies="React JS"
+                                        codeHref="https://github.com/david-r-frederick/personal-react-demos/tree/master/weather-app-demo"
+                                        projectHref="https://weather-app-3b941.web.app/current"
+                                        projectImage={WeatherAppImg}
+                                        altMessage="Weather app project" />
+                                </Col>
+                            */}
                         </Row>
                     </Section>
                     {/* @ts-ignore */}
                     <Section ref={this.skillsRef}
                         title="stack"
                         asCard={true}>
-                        <div className={classes.stackRow}>
-                            <div className={classes.stackItem}>
-                                <SiJavascript className={`${classes.stackIcon} ${classes.jsIcon}`} />
-                                <p>JavaScript</p>
-                            </div>
-                            <div className={classes.stackItem}>
-                                <SiCss3 className={`${classes.stackIcon} ${classes.cssIcon}`} />
-                                <p>CSS</p>
-                            </div>
-                            <div className={classes.stackItem}>
-                                <SiReact className={`${classes.stackIcon} ${classes.reactIcon}`} />
-                                <p>React</p>
-                            </div>
-                            <div className={classes.stackItem}>
-                                <SiHtml5 className={`${classes.stackIcon} ${classes.htmlIcon}`} />
-                                <p>HTML5</p>
-                            </div>
-                            <div className={classes.stackItem}>
-                                <SiBootstrap className={`${classes.stackIcon} ${classes.bootstrapIcon}`} />
-                                <p>BootStrap</p>
-                            </div>
-                        </div>
+                        <Row>
+                            <Col xs={4} md={2} className="my-3">
+                                <div className="d-flex flex-column justify-content-center align-items-center h-100 w-10">
+                                    <SiJavascript className={`${classes.stackIcon} ${classes.jsIcon}`} />
+                                    <span className="d-inline-block mt-3 mb-0 text-primary">JavaScript</span>
+                                </div>
+                            </Col>
+                            <Col xs={4} md={2} className="my-3">
+                                <div className="d-flex flex-column justify-content-center align-items-center h-100 w-10">
+                                    <SiCss3 className={`${classes.stackIcon} ${classes.cssIcon}`} />
+                                    <span className="d-inline-block mt-3 mb-0 text-primary">CSS</span>
+                                </div>
+                            </Col>
+                            <Col xs={4} md={2} className="my-3">
+                                <div className="d-flex flex-column justify-content-center align-items-center h-100 w-10">
+                                    <SiReact className={`${classes.stackIcon} ${classes.reactIcon}`} />
+                                    <span className="d-inline-block mt-3 mb-0 text-primary">React</span>
+                                </div>
+                            </Col>
+                            <Col xs={4} md={2} className="my-3">
+                                <div className="d-flex flex-column justify-content-center align-items-center h-100 w-10">
+                                    <SiHtml5 className={`${classes.stackIcon} ${classes.htmlIcon}`} />
+                                    <span className="d-inline-block mt-3 mb-0 text-primary">HTML5</span>
+                                </div>
+                            </Col>
+                            <Col xs={4} md={2} className="my-3">
+                                <div className="d-flex flex-column justify-content-center align-items-center h-100 w-10">
+                                    <SiBootstrap className={`${classes.stackIcon} ${classes.bootstrapIcon}`} />
+                                    <span className="d-inline-block mt-3 mb-0 text-primary">BootStrap</span>
+                                </div>
+                            </Col>
+                            <Col xs={4} md={2} className="my-3">
+                                <div className="d-flex flex-column justify-content-center align-items-center h-100 w-10">
+                                    <SiCsharp className={`${classes.stackIcon} ${classes.cSharpIcon}`} />
+                                    <span className="d-inline-block mt-3 mb-0 text-primary">C#</span>
+                                </div>
+                            </Col>
+                        </Row>
                     </Section>
                     {/* @ts-ignore */}
                     <Section ref={this.educationRef}
@@ -278,7 +330,7 @@ class App extends React.Component<{}, IAppState> {
                                 rel="noopener noreferrer"
                                 target="_blank"
                                 href="http://www.lamar.edu"
-                                className={classes.educationPrimary}>
+                                className="text-primary h2 text-decoration-none">
                                 Lamar University
                             </a>
                             <p> Beaumont, TX</p>
