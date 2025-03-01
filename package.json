@@ -2,6 +2,9 @@
   "homepage": "https://david-r-frederick.github.io/portfolio",
   "name": "pro-folio",
   "version": "0.1.0",
+  "engines": {
+    "node": ">=16.10.0"
+  },
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
