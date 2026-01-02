@@ -11,65 +11,77 @@ const skills = {
 
 export const About = () => {
   return (
-    <div className="py-24 bg-white">
+    <div className="py-32 bg-background relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 clip-path-slant pointer-events-none" />
+      
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-6">
-              <User className="h-6 w-6" />
+            <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary mb-8 shadow-inner shadow-primary/10">
+              <User className="h-7 w-7" />
             </div>
-            <h1 className="text-4xl font-extrabold mb-6 text-slate-900">About Me</h1>
-            <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+            <h1 className="text-5xl font-extrabold mb-8 tracking-tight text-slate-900 dark:text-white md:text-6xl">About Me</h1>
+            <div className="space-y-6 text-xl text-muted-foreground leading-relaxed">
               <p>
-                I am a Technical Specialist based in Beaumont, Texas, with a combined 8 years of front-end web design, back-end development, and IT support experience.
+                I am a Technical Specialist based in <span className="text-primary font-bold">Beaumont, Texas</span>, with a combined 8 years of high-impact engineering experience spanning front-end design, back-end development, and technical operations.
               </p>
               <p>
-                My professional journey has been defined by a passion for creating reusable components, implementing accessibility features, and building full-stack features from UI to database. I pride myself on my ability to collaborate effectively with teammates and clients to find creative solutions to complex problems.
+                My professional philosophy is rooted in the creation of <span className="text-foreground font-semibold">robust, scalable, and inclusive</span> digital systems. I specialize in bridging the gap between sophisticated UI requirements and complex architectural needs.
               </p>
               <p>
-                Beyond coding, I have experience in education and technical support, which has honed my communication skills and my ability to simplify complex technical concepts for diverse audiences.
+                I am not just a developer; I am a technical leader who thrives in collaborative environments, simplifying complex concepts and mentoring the next generation of engineers.
               </p>
             </div>
 
-            <div className="mt-12 grid grid-cols-2 gap-6">
-              <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                <Award className="h-8 w-8 text-primary mb-4" />
-                <h3 className="font-bold text-slate-900 mb-1">Mentor</h3>
-                <p className="text-sm text-slate-500">Onboarded and trained mid-level developers.</p>
-              </div>
-              <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                <Code2 className="h-8 w-8 text-primary mb-4" />
-                <h3 className="font-bold text-slate-900 mb-1">Architect</h3>
-                <p className="text-sm text-slate-500">Lead front-end migrations for enterprise core platforms.</p>
-              </div>
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {[
+                { icon: <Award className="h-8 w-8 text-primary mb-4" />, title: 'Technical Mentor', desc: 'Expertise in onboarding and training mid-level developers through structured programs.' },
+                { icon: <Code2 className="h-8 w-8 text-primary mb-4" />, title: 'Lead Architect', desc: 'Spearheading complex architectural migrations for enterprise core platforms.' }
+              ].map((card, i) => (
+                <div key={i} className="group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm transition-all hover:shadow-xl hover:translate-y-[-4px]">
+                  <div className="transition-transform group-hover:scale-110">{card.icon}</div>
+                  <h3 className="font-bold text-xl text-slate-900 dark:text-white mb-2">{card.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
+                </div>
+              ))}
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-slate-900 p-10 rounded-3xl text-white shadow-xl"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative p-1 rounded-[3rem] bg-gradient-to-br from-primary via-accent to-primary/20 shadow-2xl overflow-hidden group"
           >
-            <h2 className="text-2xl font-bold mb-8">Technical Skillset</h2>
-            <div className="space-y-10">
-              {Object.entries(skills).map(([category, items], i) => (
-                <div key={i}>
-                  <h3 className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">{category}</h3>
-                  <div className="flex flex-wrap gap-3">
-                    {items.map((skill, j) => (
-                      <div key={j} className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-sm font-medium">
-                        <CheckCircle2 className="h-4 w-4 text-primary" />
-                        {skill}
-                      </div>
-                    ))}
+            <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-3xl group-hover:bg-slate-900/20 transition-colors" />
+            <div className="relative bg-slate-900 dark:bg-slate-950 p-10 lg:p-14 rounded-[2.8rem] text-white">
+              <h2 className="text-3xl font-extrabold mb-12 tracking-tight">Technical Matrix</h2>
+              <div className="space-y-12">
+                {Object.entries(skills).map(([category, items], i) => (
+                  <div key={i}>
+                    <h3 className="text-primary text-xs font-bold uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
+                      <span className="h-px w-8 bg-primary/40" />
+                      {category}
+                    </h3>
+                    <div className="flex flex-wrap gap-3">
+                      {items.map((skill, j) => (
+                        <motion.div 
+                          key={j}
+                          whileHover={{ scale: 1.05 }}
+                          className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2.5 rounded-xl text-sm font-medium transition-colors hover:bg-white/10 hover:border-white/20"
+                        >
+                          <CheckCircle2 className="h-4 w-4 text-accent" />
+                          {skill}
+                        </motion.div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>

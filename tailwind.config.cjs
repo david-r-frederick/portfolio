@@ -15,7 +15,8 @@ module.exports = {
   			foreground: 'hsl(var(--foreground))',
   			primary: {
   				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
+  				foreground: 'hsl(var(--primary-foreground))',
+          glow: 'hsl(var(--primary) / 0.3)'
   			},
   			secondary: {
   				DEFAULT: 'hsl(var(--secondary))',
@@ -87,23 +88,26 @@ module.exports = {
   			]
   		},
   		animation: {
-  			'fade-in': 'fade-in 0.5s ease-out',
-  			'slide-up': 'slide-up 0.5s ease-out',
+  			'fade-in': 'fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+  			'slide-up': 'slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+        'scale-in': 'scale-in 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
   		},
   		keyframes: {
   			'fade-in': {
   				'0%': {
-  					opacity: '0'
+  					opacity: '0',
+            filter: 'blur(4px)'
   				},
   				'100%': {
-  					opacity: '1'
+  					opacity: '1',
+            filter: 'blur(0)'
   				}
   			},
   			'slide-up': {
   				'0%': {
-  					transform: 'translateY(10px)',
+  					transform: 'translateY(20px)',
   					opacity: '0'
   				},
   				'100%': {
@@ -111,6 +115,16 @@ module.exports = {
   					opacity: '1'
   				}
   			},
+        'scale-in': {
+          '0%': {
+            transform: 'scale(0.95)',
+            opacity: '0'
+          },
+          '100%': {
+            transform: 'scale(1)',
+            opacity: '1'
+          }
+        },
   			'accordion-down': {
   				from: {
   					height: '0'
