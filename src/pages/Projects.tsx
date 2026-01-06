@@ -82,10 +82,16 @@ export const Projects = () => {
                 </div>
 
                 <div className="flex gap-3">
-                  <Button variant="outline" size="sm" className="flex-1 rounded-xl h-11 border-primary/20 hover:border-primary hover:bg-primary/5 gap-2 transition-all">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="flex-1 rounded-xl h-11 border-primary/20 hover:border-primary gap-2 transition-all">
                     <ExternalLink className="h-4 w-4" /> Preview
                   </Button>
-                  <Button variant="secondary" size="sm" className="flex-1 rounded-xl h-11 gap-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition-all">
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    className="flex-1 rounded-xl h-11 gap-2 bg-slate-500 dark:bg-slate-800 hover:bg-slate-400 dark:hover:bg-slate-700 transition-all">
                     <Github className="h-4 w-4" /> Code
                   </Button>
                 </div>

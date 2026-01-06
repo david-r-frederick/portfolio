@@ -129,7 +129,7 @@ export const Home = () => {
                 <Database className="h-7 w-7" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Robust Back-End</h3>
-              <p className="text-primary-foreground/80 leading-relaxed mb-6">Designing and implementing scalable RESTful APIs and database architectures with C# and SQL. Focused on security, performance, and data integrity.</p>
+              <p className="text-primary-foreground/80 leading-relaxed mb-6">Designing and implementing scalable RESTful APIs with C# and SQL. Focused on security, performance, and data integrity.</p>
               <div className="flex flex-wrap gap-2">
                 {['C#', '.NET', 'SQL Server', 'PostgreSQL', 'Redis'].map(tag => (
                   <span key={tag} className="px-3 py-1 rounded-full bg-white/10 text-xs font-bold text-white/90">{tag}</span>
@@ -166,7 +166,7 @@ export const Home = () => {
                   </div>
                   <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-dashed">
                     <div className="font-bold text-primary mb-1">Search</div>
-                    <div className="text-xs text-muted-foreground">Elasticsearch & Algolia</div>
+                    <div className="text-xs text-muted-foreground">Elasticsearch</div>
                   </div>
                 </div>
               </div>

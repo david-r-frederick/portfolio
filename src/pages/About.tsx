@@ -27,10 +27,10 @@ export const About = () => {
             <h1 className="text-5xl font-extrabold mb-8 tracking-tight text-slate-900 dark:text-white md:text-6xl">About Me</h1>
             <div className="space-y-6 text-xl text-muted-foreground leading-relaxed">
               <p>
-                I am a Technical Specialist based in <span className="text-primary font-bold">Beaumont, Texas</span>, with a combined 8 years of high-impact engineering experience spanning front-end design, back-end development, and technical operations.
+                I am a Technical Specialist based in <span className="text-primary font-bold">Beaumont, Texas</span>, with a combined 8 years of engineering experience spanning front-end design, back-end development, and technical operations.
               </p>
               <p>
-                My professional philosophy is rooted in the creation of <span className="text-foreground font-semibold">robust, scalable, and inclusive</span> digital systems. I specialize in bridging the gap between sophisticated UI requirements and complex architectural needs.
+                My professional philosophy is rooted in the creation of <span className="text-foreground font-semibold">robust, scalable, and inclusive</span> digital systems. I specialize in bridging the gap between sophisticated UX requirements and complex architectural needs.
               </p>
               <p>
                 I am not just a developer; I am a technical leader who thrives in collaborative environments, simplifying complex concepts and mentoring the next generation of engineers.
@@ -39,8 +39,8 @@ export const About = () => {
 
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
-                { icon: <Award className="h-8 w-8 text-primary mb-4" />, title: 'Technical Mentor', desc: 'Expertise in onboarding and training mid-level developers through structured programs.' },
-                { icon: <Code2 className="h-8 w-8 text-primary mb-4" />, title: 'Lead Architect', desc: 'Spearheading complex architectural migrations for enterprise core platforms.' }
+                { icon: <Award className="h-8 w-8 text-primary mb-4" />, title: 'Technical Mentor', desc: 'Expertise in onboarding and training developers through structured programs.' },
+                { icon: <Code2 className="h-8 w-8 text-primary mb-4" />, title: 'Full-Stack eCommerce Engineer', desc: 'Delivering seamless, secure, and scalable shopping experiences from UI to database.' }
               ].map((card, i) => (
                 <div key={i} className="group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm transition-all hover:shadow-xl hover:translate-y-[-4px]">
                   <div className="transition-transform group-hover:scale-110">{card.icon}</div>
