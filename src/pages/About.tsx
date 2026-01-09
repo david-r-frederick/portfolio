@@ -3,10 +3,12 @@ import { motion } from 'framer-motion';
 import { CheckCircle2, Award, User, Code2 } from 'lucide-react';
 
 const skills = {
-  'Languages': ['JavaScript', 'TypeScript', 'C#', 'SQL', 'HTML', 'CSS', 'Java (Novice)'],
-  'Frameworks': ['React', 'React Native', 'AngularJS', 'RemixJS', 'Redux', 'Bootstrap'],
-  'Tools': ['Git', 'Firebase', 'Webpack', 'IIS', 'Azure DevOps', 'Azure'],
-  'CMS & Platforms': ['DNN', 'Kentico', 'Cascade CMS', 'Selenium IDE'],
+  'Languages': ['JavaScript/TypeScript', 'C#', 'SQL', 'HTML', 'CSS', 'Java (Novice)'],
+  'Frontend': ['React', 'React Native', 'AngularJS', 'RemixJS', 'Redux', 'Bootstrap', 'Tailwind'],
+  'Backend': ['.NET / ASP.NET Core', 'Entity Framework Core', 'REST API Design', 'Authentication & Authorization'],
+  'Databases': ['SQL Server', 'PostGreSQL (Novice)', 'JSON data modeling', 'Schema & relational design'],
+  'DevOps & Infrastructure': ['Git', 'Azure DevOps (Repos & Pipelines)', 'IIS', 'Azure', 'Webpack / Vite / Gulp'],
+  'Engineering Practices': ['Application Architecture', 'Plugin / Modular Systems', 'Legacy System Modernization', 'Debugging & Root Cause Analysis'],
 };
 
 export const About = () => {
@@ -27,13 +29,13 @@ export const About = () => {
             <h1 className="text-5xl font-extrabold mb-8 tracking-tight text-slate-900 dark:text-white md:text-6xl">About Me</h1>
             <div className="space-y-6 text-xl text-muted-foreground leading-relaxed">
               <p>
-                I am a Technical Specialist based in <span className="text-primary font-bold">Beaumont, Texas</span>, with a combined 8 years of engineering experience spanning front-end design, back-end development, and technical operations.
+                I’m a full-stack developer in Beaumont, Texas with 8+ years of experience working across client-side, server-side, and the systems that support them. Most of my work has been on real, enterprise eCommerce applications—modernizing legacy code, building new features both independently and collaboratively, and keeping things running when the edge cases inevitably show up.
               </p>
               <p>
-                My professional philosophy is rooted in the creation of <span className="text-foreground font-semibold">robust, scalable, and inclusive</span> digital systems. I specialize in bridging the gap between sophisticated UX requirements and complex architectural needs.
+                I enjoy working at the intersection of UX and architecture. I’m comfortable moving between the browser, the API, and the database, and I tend to focus on building solutions that are practical, explicit, and built to last rather than overly clever. I’m a firm believer that the only way to move fast is to build things well.
               </p>
               <p>
-                I am not just a developer; I am a technical leader who thrives in collaborative environments, simplifying complex concepts and mentoring the next generation of engineers.
+                I care a lot about clarity—both in code and in communication. I enjoy helping teams untangle complex problems, making technical decisions easier to reason about, and supporting other developers as they grow. At the end of the day, I value collaboration, continuous improvement, and shipping software that holds up over time.
               </p>
             </div>
 
