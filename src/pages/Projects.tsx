@@ -1,12 +1,22 @@
 import { motion } from 'framer-motion';
-import { ShoppingCart, Globe, Code, Tractor } from 'lucide-react';
+import { ShoppingCart, Globe, Code, Tractor, Bug } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ProjectCard, type Project } from './ProjectCard';
 // @ts-ignore it's there
 import CSSPressMeImage from "../assets/img/CSSPressMeBig.png";
 // @ts-ignore it's there
-import BugTrackerImage from "../assets/img/BugTrackerBig.png";
+import BugTrackerImage from "../assets/img/BUGTRACKER.png";
+// @ts-ignore it's there
+import ThunderstruckImage from "../assets/img/THUNDERSTRUCK.png";
+// @ts-ignore it's there
+import TSCOImage from "../assets/img/TSCO.jpeg";
+// @ts-ignore it's there
+import LamarUniversityImage from "../assets/img/LAMAR.png";
+// @ts-ignore it's there
+import GLVeneerImage from "../assets/img/GLV.png";
+// @ts-ignore it's there
+import RiedellSkatesImage from "../assets/img/RIE.png";
 
 const clientProjects: Project[] = [
   {
@@ -14,7 +24,7 @@ const clientProjects: Project[] = [
     category: 'eCommerce Development',
     desc: 'Worked with the team to develop and maintain the eCommerce platform for Riedell Skates, featuring product catalogs for competitive, casual, and developmental ice skates, dealer locator functionality, and comprehensive skate fitting resources.',
     icon: <ShoppingCart className="h-6 w-6" />,
-    imageSrc: "https://ice.riedellskates.com/portals/2/images/ice/homepage/HomePage_CollageTopRight_ShopDevelopmental.jpg?ver=880YPjaqCrlfD-IrObPZ1A%3d%3d",
+    image: <img src={RiedellSkatesImage} alt="Riedell Skates" />,
     tags: ['React', 'TypeScript', 'Complex Products', 'eCommerce'],
     link: 'https://ice.riedellskates.com/'
   },
@@ -22,7 +32,7 @@ const clientProjects: Project[] = [
     title: 'Body Shop Jobs',
     category: 'Job Board Platform',
     desc: 'Developed and maintained the Body Shop Jobs platform, a specialized job board connecting automotive body shop professionals with employment opportunities, featuring job listings, employer advertising, and comprehensive job description resources.',
-    // imageSrc: "https://bodyshopjobs.com/images/ecommerce/Body-Shop-Jobs-logo.png",
+    image: <img src={TSCOImage} alt="TSCO" />,
     icon: <Code className="h-6 w-6" />,
     tags: ['React', 'TypeScript', 'C#', 'Complex Schema', 'Job Board'],
     link: 'https://bodyshopjobs.com/'
@@ -30,16 +40,18 @@ const clientProjects: Project[] = [
   {
     title: 'Thunderstuck Agriculture',
     category: 'Agricultural Website',
+    image: <img src={ThunderstruckImage} alt="Thunderstruck Agricultural" />,
     desc: 'Developed the product detail page and header for the Thunderstruck Agricultural website, a specialized website featuring comprehensive farm equipment resources.',
     icon: <Tractor className="h-6 w-6" />,
     tags: ['React', 'TypeScript', 'Agricultural', 'WordPress'],
     link: 'https://thunderstruckag.com/'
   },
   {
-    title: 'GL Veneeer',
+    title: 'GL Veneer',
     category: 'Agricultural Website',
     desc: 'Assisted with the development of the GL Veneeer website, showcasing wood veneer sheets, custom plywood, and live edge slabs with an emphasis on species inventory and sustainability.',
     icon: <Tractor className="h-6 w-6" />,
+    image: <img src={GLVeneerImage} alt="GL Veneer" />,
     tags: ['React', 'TypeScript', 'Dot Net Nuke'],
     link: 'https://glveneer.com/'
   },
@@ -51,6 +63,7 @@ const employerProjects: Project[] = [
     category: 'Web Design & CMS',
     desc: 'Designed and developed 4 new department websites and 40+ web pages for Lamar University\'s Office of International Education.',
     icon: <Globe className="h-6 w-6" />,
+    image: <img src={LamarUniversityImage} alt="Lamar University" />,
     tags: ['Cascade CMS', 'CSS', 'HTML', 'JavaScript'],
     link: 'https://www.lamar.edu/international-education/index.html'
   }
@@ -60,8 +73,8 @@ const funProjects: Project[] = [
   {
     title: 'CSS PressMe',
     image: <img src={CSSPressMeImage} alt="CSS Press Me" />,
-    category: 'Front End Development',
-    desc: 'Architected and constructed a complete rebuild of the front-end for a core enterprise eCommerce platform, migrating from AngularJS to React.',
+    category: 'Styling',
+    desc: 'A fun side project that allows the user to temporarily write CSS and see the results in the browser without writing code.',
     icon: <ShoppingCart className="h-6 w-6" />,
     tags: ['React', 'CSS'],
     codeLink: "https://github.com/david-r-frederick/css-press-me",
@@ -71,8 +84,8 @@ const funProjects: Project[] = [
     title: 'Bug Tracker',
     image: <img src={BugTrackerImage} alt="Bug Tracker" />,
     category: 'Front End Development',
-    desc: 'Architected and constructed a complete rebuild of the front-end for a core enterprise eCommerce platform, migrating from AngularJS to React.',
-    icon: <ShoppingCart className="h-6 w-6" />,
+    desc: 'My first attempt at a "real" project, a bug tracking system that allows the user to create, edit, and delete bugs and assign them to users.',
+    icon: <Bug className="h-6 w-6" />,
     tags: ['React', 'BootStrap', 'Firebase'],
     codeLink: "https://github.com/david-r-frederick/bug-tracker",
     link: "https://bug-tracker-6ea40.web.app/login"
@@ -92,7 +105,9 @@ export const Projects = () => {
         >
           <span className="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest border border-primary/20">Portfolio</span>
           <h1 className="text-5xl font-extrabold mb-6 tracking-tight text-slate-900 dark:text-white md:text-7xl">Selected Works</h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">A showcase of enterprise eCommerce platforms, high-compliance systems, and digital ecosystems built for performance and scale.</p>
+          <p className="text-xl text-muted-foreground leading-relaxed">
+            A showcase of enterprise eCommerce platforms, a university web fleet, and fun side projects.
+          </p>
         </motion.div>
 
         <motion.div
