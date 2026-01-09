@@ -128,7 +128,8 @@ export const Experience = () => {
                 </div>
               </div>
               <div className="p-6 rounded-2xl bg-white/5 border border-white/10 text-slate-300 text-sm leading-relaxed italic">
-                "The intersection of psychology and technology defines my approach to software: understanding the human element to build better digital experiences."
+                "Studying psychology gave me a strong foundation in how people think, communicate,
+                and make decisions. I apply that knowledge as I build intuitive, user-friendly software."
               </div>
             </div>
           </motion.div>
