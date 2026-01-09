@@ -51,7 +51,10 @@ export const Home = () => {
                   </Button>
                 </Link>
                 <Link to="/experience">
-                  <Button variant="outline" size="lg" className="h-16 px-10 text-lg font-bold rounded-2xl bg-background/50 backdrop-blur-sm transition-all hover:bg-background hover:translate-y-[-4px] active:scale-95">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="h-16 px-10 text-lg font-bold rounded-2xl bg-background/50 backdrop-blur-sm transition-all hover:bg-black/40 hover:translate-y-[-4px] active:scale-95">
                     My Journey
                   </Button>
                 </Link>
@@ -111,7 +114,11 @@ export const Home = () => {
                 <Globe className="h-7 w-7" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Advanced Front-End Systems</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">Expertise in building highly interactive and accessible user interfaces using React, TypeScript, and modern state management. Proven track record in leading large-scale architectural migrations for eCommerce leaders.</p>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                I build UX-friendly, polished user interfaces using React, TypeScript, and modern state management.
+                I&apos;ve worked on large eCommerce front ends, including migrating older architectures to newer patterns while keeping performance,
+                usability, and maintainability front and center.
+              </p>
               <div className="flex flex-wrap gap-2">
                 {['React', 'TypeScript', 'Next.js', 'AngularJS', 'Tailwind CSS'].map(tag => (
                   <span key={tag} className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-600 dark:text-slate-400">{tag}</span>
@@ -129,7 +136,10 @@ export const Home = () => {
                 <Database className="h-7 w-7" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Robust Back-End</h3>
-              <p className="text-primary-foreground/80 leading-relaxed mb-6">Designing and implementing scalable RESTful APIs with C# and SQL. Focused on security, performance, and data integrity.</p>
+              <p className="text-primary-foreground/80 leading-relaxed mb-6">
+                I design and build RESTful APIs using C# and SQL, with a strong focus on security, performance,
+                and future-proofing. Most of my experience is in production systems where reliability matters and bugs are not an option.
+              </p>
               <div className="flex flex-wrap gap-2">
                 {['C#', '.NET', 'SQL Server', 'PostgreSQL', 'Redis'].map(tag => (
                   <span key={tag} className="px-3 py-1 rounded-full bg-white/10 text-xs font-bold text-white/90">{tag}</span>
@@ -149,7 +159,11 @@ export const Home = () => {
                     <Layers className="h-7 w-7" />
                   </div>
                   <h3 className="text-2xl font-bold mb-4">Enterprise eCommerce Solutions</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">Specializing in high-compliance, mission-critical eCommerce platforms. Deep experience with HIPAA compliance, third-party logistics, and complex payment gateway integrations.</p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    I’ve spent much of my career working on mission-critical eCommerce platforms with real-world constraints.
+                    That includes navigating compliance requirements, integrating third-party logistics providers,
+                    and building around complex payment and fulfillment workflows.
+                  </p>
                 </div>
                 <div className="flex-1 grid grid-cols-2 gap-4 w-full">
                   <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-dashed">
@@ -184,7 +198,9 @@ export const Home = () => {
           className="relative overflow-hidden rounded-[3rem] bg-slate-900 dark:bg-slate-800 px-8 py-20 text-center text-white shadow-2xl"
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent)] pointer-events-none" />
-          <h2 className="relative z-10 mb-8 text-4xl font-extrabold tracking-tight sm:text-6xl">Ready to build something <span className="text-accent">extraordinary</span>?</h2>
+          <h2 className="relative z-10 mb-8 text-4xl font-extrabold tracking-tight sm:text-6xl">
+            Ready to build something <span className="text-accent">extraordinary</span>?
+          </h2>
           <p className="relative z-10 mb-10 text-xl text-slate-400 max-w-2xl mx-auto">Let's collaborate to bring your vision to life with performance-driven code and world-class design.</p>
           <div className="relative z-10 flex flex-wrap justify-center gap-4">
             <Link to="/contact">
