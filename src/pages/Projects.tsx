@@ -1,10 +1,49 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, ShoppingCart, Globe, ShieldCheck } from 'lucide-react';
+import { ExternalLink, Github, ShoppingCart, Globe, ShieldCheck, Database, Code, Server, Tractor } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
-const projects = [
+interface Project {
+  title: string;
+  category: string;
+  desc: string;
+  icon?: React.ReactNode;
+  imageSrc?: string;
+  tags: string[];
+  link: string;
+}
+
+const clientProjects: Project[] = [
+  {
+    title: 'Riedell Skates',
+    category: 'eCommerce Development',
+    desc: 'Worked with the team to develop and maintain the eCommerce platform for Riedell Skates, featuring product catalogs for competitive, casual, and developmental ice skates, dealer locator functionality, and comprehensive skate fitting resources.',
+    icon: <ShoppingCart className="h-6 w-6" />,
+    imageSrc: "https://ice.riedellskates.com/portals/2/images/ice/homepage/HomePage_CollageTopRight_ShopDevelopmental.jpg?ver=880YPjaqCrlfD-IrObPZ1A%3d%3d",
+    tags: ['React', 'TypeScript', 'eCommerce', 'Web Development'],
+    link: 'https://ice.riedellskates.com/'
+  },
+  {
+    title: 'Body Shop Jobs',
+    category: 'Job Board Platform',
+    desc: 'Developed and maintained the Body Shop Jobs platform, a specialized job board connecting automotive body shop professionals with employment opportunities, featuring job listings, employer advertising, and comprehensive job description resources.',
+    // imageSrc: "https://bodyshopjobs.com/images/ecommerce/Body-Shop-Jobs-logo.png",
+    icon: <Code className="h-6 w-6" />,
+    tags: ['React', 'TypeScript', 'Web Development', 'Job Board'],
+    link: 'https://bodyshopjobs.com/'
+  },
+  {
+    title: 'Thunderstuck Agriculture',
+    category: 'Agricultural Website',
+    desc: 'Developed the product detail page and header for the Thunderstruck Agricultural website, a specialized website featuring comprehensive farm equipment resources.',
+    icon: <Tractor className="h-6 w-6" />,
+    tags: ['React', 'TypeScript', 'Web Development', 'Agricultural'],
+    link: 'https://thunderstruckag.com/'
+  }
+];
+
+const employerProjects: Project[] = [
   {
     title: 'Core eCommerce Rebuild',
     category: 'Full-Stack Development',
@@ -24,7 +63,34 @@ const projects = [
   {
     title: 'Lamar University Web Fleet',
     category: 'Web Design & CMS',
-    desc: 'Designed and developed 4 new department websites and 40+ web pages for Lamar University’s Office of International Education.',
+    desc: 'Designed and developed 4 new department websites and 40+ web pages for Lamar University\'s Office of International Education.',
+    icon: <Globe className="h-6 w-6" />,
+    tags: ['Cascade CMS', 'CSS', 'HTML', 'JavaScript'],
+    link: '#'
+  }
+];
+
+const funProjects: Project[] = [
+  {
+    title: 'Core eCommerce Rebuild',
+    category: 'Full-Stack Development',
+    desc: 'Architected and constructed a complete rebuild of the front-end for a core enterprise eCommerce platform, migrating from AngularJS to React.',
+    icon: <ShoppingCart className="h-6 w-6" />,
+    tags: ['React', 'TypeScript', 'Redux', 'C#'],
+    link: '#'
+  },
+  {
+    title: 'HIPAA Compliant Platforms',
+    category: 'Specialized Web Apps',
+    desc: 'Developed multiple HIPAA-compliant eCommerce projects ensuring strict data security and privacy standards were met.',
+    icon: <ShieldCheck className="h-6 w-6" />,
+    tags: ['React', 'Security', 'RESTful APIs', 'SQL'],
+    link: '#'
+  },
+  {
+    title: 'Lamar University Web Fleet',
+    category: 'Web Design & CMS',
+    desc: 'Designed and developed 4 new department websites and 40+ web pages for Lamar University\'s Office of International Education.',
     icon: <Globe className="h-6 w-6" />,
     tags: ['Cascade CMS', 'CSS', 'HTML', 'JavaScript'],
     link: '#'
@@ -47,58 +113,212 @@ export const Projects = () => {
           <p className="text-xl text-muted-foreground leading-relaxed">A showcase of enterprise eCommerce platforms, high-compliance systems, and digital ecosystems built for performance and scale.</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group relative flex flex-col overflow-hidden rounded-[2.5rem] border bg-card p-2 transition-all hover:shadow-2xl hover:translate-y-[-8px]"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-slate-100 dark:bg-slate-800">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 transition-opacity group-hover:opacity-60" />
-                <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
-                  <div className="p-8 rounded-full bg-white/20 backdrop-blur-xl text-white shadow-2xl">
-                    {React.cloneElement(project.icon as React.ReactElement, { className: "h-12 w-12" })}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h2 className="text-3xl font-bold mb-8 text-slate-900 dark:text-white">For Clients</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {clientProjects.map((project, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="group relative flex flex-col overflow-hidden rounded-[2.5rem] border bg-card p-2 transition-all hover:shadow-2xl hover:translate-y-[-8px]"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-slate-100 dark:bg-slate-800">
+                  {project.imageSrc ? (
+                    <>
+                      <img src={project.imageSrc} alt={project.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 transition-opacity group-hover:opacity-60" />
+                    </>
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 transition-opacity group-hover:opacity-60" />
+                      <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                        <div className="p-8 rounded-full bg-white/20 backdrop-blur-xl text-white shadow-2xl">
+                          {React.cloneElement(project.icon as React.ReactElement, { className: "h-12 w-12" })}
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                <div className="flex flex-col flex-1 p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-bold text-primary uppercase tracking-widest">{project.category}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white group-hover:text-primary transition-colors">{project.title}</h3>
+                  <div className="mb-8 max-h-[4.5rem] overflow-y-scroll [scrollbar-width:thin] [scrollbar-color:rgb(203_213_225)_transparent] hover:[scrollbar-color:rgb(203_213_225)_transparent] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-transparent hover:[&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-thumb]:rounded-full">
+                    <p className="text-muted-foreground leading-relaxed">{project.desc}</p>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2 mt-auto mb-8">
+                    {project.tags.map((tag, j) => (
+                      <span key={j} className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-bold rounded-lg uppercase tracking-wider">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-3">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 rounded-xl h-11 border-primary/20 hover:border-primary gap-2 transition-all">
+                      <ExternalLink className="h-4 w-4" /> Preview
+                    </Button>
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      className="flex-1 rounded-xl h-11 gap-2 bg-slate-500 dark:bg-slate-800 hover:bg-slate-400 dark:hover:bg-slate-700 transition-all">
+                      <Github className="h-4 w-4" /> Code
+                    </Button>
                   </div>
                 </div>
-              </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
-              <div className="flex flex-col flex-1 p-8">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-bold text-primary uppercase tracking-widest">{project.category}</span>
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white group-hover:text-primary transition-colors">{project.title}</h3>
-                <p className="text-muted-foreground mb-8 leading-relaxed line-clamp-3">{project.desc}</p>
-                
-                <div className="flex flex-wrap gap-2 mt-auto mb-8">
-                  {project.tags.map((tag, j) => (
-                    <span key={j} className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-bold rounded-lg uppercase tracking-wider">
-                      {tag}
-                    </span>
-                  ))}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h2 className="text-3xl font-bold mb-8 text-slate-900 dark:text-white">For My Employers</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {employerProjects.map((project, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="group relative flex flex-col overflow-hidden rounded-[2.5rem] border bg-card p-2 transition-all hover:shadow-2xl hover:translate-y-[-8px]"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-slate-100 dark:bg-slate-800">
+                  {project.imageSrc ? (
+                    <>
+                      <img src={project.imageSrc} alt={project.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 transition-opacity group-hover:opacity-60" />
+                    </>
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 transition-opacity group-hover:opacity-60" />
+                      <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                        <div className="p-8 rounded-full bg-white/20 backdrop-blur-xl text-white shadow-2xl">
+                          {React.cloneElement(project.icon as React.ReactElement, { className: "h-12 w-12" })}
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
 
-                <div className="flex gap-3">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="flex-1 rounded-xl h-11 border-primary/20 hover:border-primary gap-2 transition-all">
-                    <ExternalLink className="h-4 w-4" /> Preview
-                  </Button>
-                  <Button
-                    variant="secondary"
-                    size="sm"
-                    className="flex-1 rounded-xl h-11 gap-2 bg-slate-500 dark:bg-slate-800 hover:bg-slate-400 dark:hover:bg-slate-700 transition-all">
-                    <Github className="h-4 w-4" /> Code
-                  </Button>
+                <div className="flex flex-col flex-1 p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-bold text-primary uppercase tracking-widest">{project.category}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white group-hover:text-primary transition-colors">{project.title}</h3>
+                  <div className="mb-8 max-h-[4.5rem] overflow-y-scroll [scrollbar-width:thin] [scrollbar-color:rgb(203_213_225)_transparent] hover:[scrollbar-color:rgb(203_213_225)_transparent] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-transparent hover:[&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-thumb]:rounded-full">
+                    <p className="text-muted-foreground leading-relaxed">{project.desc}</p>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2 mt-auto mb-8">
+                    {project.tags.map((tag, j) => (
+                      <span key={j} className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-bold rounded-lg uppercase tracking-wider">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-3">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 rounded-xl h-11 border-primary/20 hover:border-primary gap-2 transition-all">
+                      <ExternalLink className="h-4 w-4" /> Preview
+                    </Button>
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      className="flex-1 rounded-xl h-11 gap-2 bg-slate-500 dark:bg-slate-800 hover:bg-slate-400 dark:hover:bg-slate-700 transition-all">
+                      <Github className="h-4 w-4" /> Code
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h2 className="text-3xl font-bold mb-8 text-slate-900 dark:text-white">For Fun</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {funProjects.map((project, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="group relative flex flex-col overflow-hidden rounded-[2.5rem] border bg-card p-2 transition-all hover:shadow-2xl hover:translate-y-[-8px]"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-slate-100 dark:bg-slate-800">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 transition-opacity group-hover:opacity-60" />
+                  <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                    <div className="p-8 rounded-full bg-white/20 backdrop-blur-xl text-white shadow-2xl">
+                      {React.cloneElement(project.icon as React.ReactElement, { className: "h-12 w-12" })}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col flex-1 p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-bold text-primary uppercase tracking-widest">{project.category}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white group-hover:text-primary transition-colors">{project.title}</h3>
+                  <div className="mb-8 max-h-[4.5rem] overflow-y-scroll [scrollbar-width:thin] [scrollbar-color:rgb(203_213_225)_transparent] hover:[scrollbar-color:rgb(203_213_225)_transparent] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-transparent hover:[&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-thumb]:rounded-full">
+                    <p className="text-muted-foreground leading-relaxed">{project.desc}</p>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2 mt-auto mb-8">
+                    {project.tags.map((tag, j) => (
+                      <span key={j} className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-bold rounded-lg uppercase tracking-wider">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-3">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 rounded-xl h-11 border-primary/20 hover:border-primary gap-2 transition-all">
+                      <ExternalLink className="h-4 w-4" /> Preview
+                    </Button>
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      className="flex-1 rounded-xl h-11 gap-2 bg-slate-500 dark:bg-slate-800 hover:bg-slate-400 dark:hover:bg-slate-700 transition-all">
+                      <Github className="h-4 w-4" /> Code
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
