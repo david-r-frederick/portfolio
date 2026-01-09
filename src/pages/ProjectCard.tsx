@@ -93,9 +93,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           {project.codeLink && <Button
             variant="secondary"
             size="sm"
+            asChild
             className="flex-1 rounded-xl h-11 gap-2 bg-slate-500 dark:bg-slate-800 hover:bg-slate-400 dark:hover:bg-slate-700 transition-all"
           >
-            <Github className="h-4 w-4" /> Code
+            <a href={project.codeLink} target="_blank" rel="noopener noreferrer">
+              <Github className="h-4 w-4" /> Code
+            </a>
           </Button>}
         </div>
       </div>
