@@ -56,7 +56,7 @@ export const Contact = () => {
               </div>
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -90,7 +90,7 @@ export const Contact = () => {
                   </Button>
                 </form>
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </div>
