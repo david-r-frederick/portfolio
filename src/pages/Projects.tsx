@@ -103,8 +103,12 @@ export const Projects = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center max-w-3xl mx-auto mb-24"
         >
-          <span className="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest border border-primary/20">Portfolio</span>
-          <h1 className="text-5xl font-extrabold mb-6 tracking-tight text-slate-900 dark:text-white md:text-7xl">Selected Works</h1>
+          <span className="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest border border-primary/20">
+            Portfolio
+          </span>
+          <h1 className="text-5xl font-extrabold mb-6 tracking-tight text-slate-900 dark:text-white md:text-7xl">
+            Selected Works
+          </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             A showcase of enterprise eCommerce platforms, a university web fleet, and fun side projects.
           </p>
@@ -161,10 +165,15 @@ export const Projects = () => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent)]" />
           <h2 className="relative z-10 text-4xl font-extrabold mb-6 tracking-tight">Need a custom enterprise solution?</h2>
           <p className="relative z-10 text-xl text-primary-foreground/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            I've contributed to dozens of high-traffic eCommerce platforms. Let's discuss your next project's architectural needs.
+            I've contributed to dozens of high-traffic eCommerce platforms. Let's discuss your next
+            project's architectural needs.
           </p>
           <Link to="/contact">
-            <Button size="lg" variant="secondary" className="relative z-10 h-16 px-10 text-lg font-bold rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95">
+            <Button
+              size="lg"
+              variant="secondary"
+              className="relative z-10 h-16 px-10 text-lg font-bold rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95"
+            >
               Get In Touch
             </Button>
           </Link>

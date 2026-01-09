@@ -15,7 +15,9 @@ export const Contact = () => {
   return (
     <div className="py-32 bg-background min-h-screen relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[1000px] w-[1000px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 h-[1000px] w-[1000px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"
+      />
       
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto">
@@ -26,17 +28,41 @@ export const Contact = () => {
               transition={{ duration: 0.8 }}
               className="lg:col-span-5"
             >
-              <h1 className="text-5xl font-extrabold mb-8 tracking-tighter text-slate-900 dark:text-white md:text-7xl">Let's <span className="text-primary">Connect.</span></h1>
+              <h1 className="text-5xl font-extrabold mb-8 tracking-tighter text-slate-900 dark:text-white md:text-7xl">
+                Let's <span className="text-primary">Connect.</span>
+              </h1>
               <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-                I'm currently seeking new challenges in <span className="text-foreground font-semibold">Full-Stack Development</span>. Whether you have a project in mind or a role that fits my expertise, I'm just a message away.
+                I'm currently seeking new challenges in{' '}
+                <span className="text-foreground font-semibold">Full-Stack Development</span>. Whether you
+                have a project in mind or a role that fits my expertise, I'm just a message away.
               </p>
 
               <div className="grid gap-4">
                 {[
-                  { icon: <Mail className="h-5 w-5" />, label: 'Email', value: 'dfrederick79@gmail.com', href: 'mailto:dfrederick79@gmail.com' },
-                  { icon: <Linkedin className="h-5 w-5" />, label: 'LinkedIn', value: 'david-frederick', href: 'https://linkedin.com/in/david-frederick-413b30ab' },
-                  { icon: <Phone className="h-5 w-5" />, label: 'Phone', value: '409.543.7859', href: 'tel:409.543.7859' },
-                  { icon: <MapPin className="h-5 w-5" />, label: 'Location', value: 'Beaumont, Texas', href: '#' },
+                  {
+                    icon: <Mail className="h-5 w-5" />,
+                    label: 'Email',
+                    value: 'dfrederick79@gmail.com',
+                    href: 'mailto:dfrederick79@gmail.com',
+                  },
+                  {
+                    icon: <Linkedin className="h-5 w-5" />,
+                    label: 'LinkedIn',
+                    value: 'david-frederick',
+                    href: 'https://linkedin.com/in/david-frederick-413b30ab',
+                  },
+                  {
+                    icon: <Phone className="h-5 w-5" />,
+                    label: 'Phone',
+                    value: '409.543.7859',
+                    href: 'tel:409.543.7859',
+                  },
+                  {
+                    icon: <MapPin className="h-5 w-5" />,
+                    label: 'Location',
+                    value: 'Beaumont, Texas',
+                    href: '#',
+                  },
                 ].map((item, i) => (
                   <motion.a
                     key={i}
@@ -44,11 +70,15 @@ export const Contact = () => {
                     whileHover={{ x: 10 }}
                     className="flex items-center gap-6 group p-6 rounded-3xl bg-white/50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 transition-all hover:bg-white dark:hover:bg-slate-900 hover:shadow-xl"
                   >
-                    <div className="h-12 w-12 flex items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all group-hover:scale-110 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary/20">
+                    <div
+                      className="h-12 w-12 flex items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all group-hover:scale-110 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary/20"
+                    >
                       {item.icon}
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-1">{item.label}</div>
+                      <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-1">
+                        {item.label}
+                      </div>
                       <div className="text-lg font-bold text-slate-900 dark:text-white">{item.value}</div>
                     </div>
                   </motion.a>

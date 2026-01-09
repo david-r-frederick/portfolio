@@ -32,13 +32,19 @@ export const Navbar = () => {
       )}
     >
       <nav className={cn(
-        "container mx-auto flex h-16 items-center justify-between rounded-2xl border transition-all duration-500",
-        scrolled 
-          ? "glass px-6 shadow-[0_8px_32px_rgba(0,0,0,0.08)]" 
-          : "bg-transparent border-transparent px-4"
-      )}>
-        <Link to="/" className="group flex items-center gap-2 font-sans text-xl font-bold text-primary">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white shadow-lg transition-transform group-hover:scale-110 active:scale-95">
+        'container mx-auto flex h-16 items-center justify-between rounded-2xl border transition-all duration-500',
+        scrolled
+          ? 'glass px-6 shadow-[0_8px_32px_rgba(0,0,0,0.08)]'
+          : 'bg-transparent border-transparent px-4',
+      )}
+    >
+        <Link
+          to="/"
+          className="group flex items-center gap-2 font-sans text-xl font-bold text-primary"
+        >
+          <div
+            className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white shadow-lg transition-transform group-hover:scale-110 active:scale-95"
+          >
             <Code2 className="h-6 w-6" />
           </div>
           <span className="tracking-tight text-foreground">David Frederick</span>
@@ -51,8 +57,8 @@ export const Navbar = () => {
               key={item.path}
               to={item.path}
               className={cn(
-                "relative px-4 py-2 text-sm font-medium transition-colors hover:text-primary",
-                location.pathname === item.path ? "text-primary" : "text-muted-foreground"
+                'relative px-4 py-2 text-sm font-medium transition-colors hover:text-primary',
+                location.pathname === item.path ? 'text-primary' : 'text-muted-foreground',
               )}
             >
               {item.name}
@@ -67,7 +73,10 @@ export const Navbar = () => {
           ))}
           <div className="ml-4 pl-4 border-l">
             <Link to="/contact">
-              <Button size="sm" className="rounded-full px-6 font-semibold shadow-md transition-all hover:shadow-lg active:scale-95">
+              <Button
+                size="sm"
+                className="rounded-full px-6 font-semibold shadow-md transition-all hover:shadow-lg active:scale-95"
+              >
                 Hire Me
               </Button>
             </Link>
@@ -98,10 +107,10 @@ export const Navbar = () => {
                     key={item.path}
                     to={item.path}
                     className={cn(
-                      "flex items-center justify-between rounded-xl px-4 py-3 text-lg font-medium transition-colors",
-                      location.pathname === item.path 
-                        ? "bg-primary/5 text-primary" 
-                        : "text-muted-foreground hover:bg-muted"
+                      'flex items-center justify-between rounded-xl px-4 py-3 text-lg font-medium transition-colors',
+                      location.pathname === item.path
+                        ? 'bg-primary/5 text-primary'
+                        : 'text-muted-foreground hover:bg-muted',
                     )}
                     onClick={() => setIsOpen(false)}
                   >
@@ -112,7 +121,9 @@ export const Navbar = () => {
                   </Link>
                 ))}
                 <Link to="/contact" onClick={() => setIsOpen(false)}>
-                  <Button className="w-full rounded-xl py-6 text-lg font-semibold shadow-xl">Hire Me</Button>
+                  <Button className="w-full rounded-xl py-6 text-lg font-semibold shadow-xl">
+                    Hire Me
+                  </Button>
                 </Link>
               </div>
             </motion.div>

@@ -38,9 +38,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               alt={project.title}
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
             />}
-            {project.image && <div className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
-              {React.cloneElement(project.image as React.ReactElement, { className: 'h-full w-full object-cover' })}
-            </div>}
+            {project.image && (
+              <div className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                {React.cloneElement(project.image as React.ReactElement, {
+                  className: 'h-full w-full object-cover',
+                })}
+              </div>
+            )}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 transition-opacity group-hover:opacity-60" />
           </>
         ) : (
@@ -57,12 +61,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
       <div className="flex flex-col flex-1 p-8">
         <div className="flex items-center justify-between mb-4">
-          <span className="text-xs font-bold text-primary uppercase tracking-widest">{project.category}</span>
+          <span className="text-xs font-bold text-primary uppercase tracking-widest">
+            {project.category}
+          </span>
         </div>
         <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
           {project.title}
         </h3>
-        <div className="mb-8 max-h-[4.5rem] overflow-y-scroll [scrollbar-width:thin] [scrollbar-color:rgb(203_213_225)_transparent] hover:[scrollbar-color:rgb(203_213_225)_transparent] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-transparent hover:[&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-thumb]:rounded-full">
+        <div
+          className="mb-8 max-h-[4.5rem] overflow-y-scroll [scrollbar-width:thin] [scrollbar-color:rgb(203_213_225)_transparent] hover:[scrollbar-color:rgb(203_213_225)_transparent] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-transparent hover:[&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-thumb]:rounded-full"
+        >
           <p className="text-muted-foreground leading-relaxed">{project.desc}</p>
         </div>
 
@@ -90,16 +98,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               </a>
             </Button>
           )}
-          {project.codeLink && <Button
-            variant="secondary"
-            size="sm"
-            asChild
-            className="flex-1 rounded-xl h-11 gap-2 bg-slate-500 dark:bg-slate-800 hover:bg-slate-400 dark:hover:bg-slate-700 transition-all"
-          >
+          {project.codeLink && (
+            <Button
+              variant="secondary"
+              size="sm"
+              asChild
+              className="flex-1 rounded-xl h-11 gap-2 bg-slate-500 dark:bg-slate-800 hover:bg-slate-400 dark:hover:bg-slate-700 transition-all"
+            >
             <a href={project.codeLink} target="_blank" rel="noopener noreferrer">
               <Github className="h-4 w-4" /> Code
             </a>
-          </Button>}
+          </Button>
+          )}
         </div>
       </div>
     </motion.div>

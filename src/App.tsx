@@ -14,7 +14,9 @@ function App() {
   return (
     <Router basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
-      <div className="flex min-h-screen flex-col font-body noise selection:bg-primary selection:text-white">
+      <div
+        className="flex min-h-screen flex-col font-body noise selection:bg-primary selection:text-white"
+      >
         <Navbar />
         <main className="flex-1">
           <Routes>

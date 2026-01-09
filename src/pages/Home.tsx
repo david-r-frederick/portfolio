@@ -17,7 +17,9 @@ export const Home = () => {
             className="h-full w-full object-cover opacity-10 dark:opacity-20 transition-opacity duration-1000"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
-          <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[120px]" />
+          <div
+            className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[120px]"
+          />
         </div>
 
         <div className="container relative z-10 mx-auto px-4 lg:px-8">
@@ -38,15 +40,28 @@ export const Home = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h1 className="mb-6 text-5xl font-extrabold tracking-tighter text-slate-900 dark:text-white md:text-8xl lg:leading-[1.1]">
-                Crafting Digital <span className="bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-x">Experiences</span> That Scale.
+                Crafting Digital{' '}
+                <span
+                  className="bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-x"
+                >
+                  Experiences
+                </span>{' '}
+                That Scale.
               </h1>
               <p className="mb-10 text-lg leading-relaxed text-slate-600 dark:text-slate-400 md:text-2xl max-w-2xl mx-auto">
-                Technical Specialist with 8 years of experience building enterprise-grade applications. Specializing in <span className="text-primary font-semibold">React</span>, <span className="text-primary font-semibold">TypeScript</span>, and <span className="text-primary font-semibold">C#</span>.
+                Technical Specialist with 8 years of experience building enterprise-grade applications.
+                Specializing in{' '}
+                <span className="text-primary font-semibold">React</span>,{' '}
+                <span className="text-primary font-semibold">TypeScript</span>, and{' '}
+                <span className="text-primary font-semibold">C#</span>.
               </p>
               
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link to="/projects">
-                  <Button size="lg" className="h-16 px-10 text-lg font-bold rounded-2xl shadow-xl shadow-primary/20 transition-all hover:translate-y-[-4px] hover:shadow-2xl active:scale-95">
+                  <Button
+                    size="lg"
+                    className="h-16 px-10 text-lg font-bold rounded-2xl shadow-xl shadow-primary/20 transition-all hover:translate-y-[-4px] hover:shadow-2xl active:scale-95"
+                  >
                     View Portfolio <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
@@ -54,7 +69,8 @@ export const Home = () => {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="h-16 px-10 text-lg font-bold rounded-2xl bg-background/50 backdrop-blur-sm transition-all hover:bg-black/40 hover:translate-y-[-4px] active:scale-95">
+                    className="h-16 px-10 text-lg font-bold rounded-2xl bg-background/50 backdrop-blur-sm transition-all hover:bg-black/40 hover:translate-y-[-4px] active:scale-95"
+                  >
                     My Journey
                   </Button>
                 </Link>
@@ -74,7 +90,7 @@ export const Home = () => {
               { label: 'Enterprise Clients', value: '15+', icon: <Code className="h-5 w-5" /> },
               { label: 'Core Technologies', value: '10+', icon: <Database className="h-5 w-5" /> },
             ].map((stat, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -82,12 +98,20 @@ export const Home = () => {
                 transition={{ delay: i * 0.1 }}
                 className="group relative overflow-hidden rounded-3xl border bg-white/50 dark:bg-slate-900/50 p-8 backdrop-blur-xl transition-all hover:bg-white dark:hover:bg-slate-900 hover:shadow-2xl hover:translate-y-[-4px]"
               >
-                <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-primary/5 blur-2xl group-hover:bg-primary/10 transition-colors" />
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-transform group-hover:scale-110">
+                <div
+                  className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-primary/5 blur-2xl group-hover:bg-primary/10 transition-colors"
+                />
+                <div
+                  className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-transform group-hover:scale-110"
+                >
                   {stat.icon}
                 </div>
-                <div className="text-4xl font-extrabold text-slate-900 dark:text-white mb-1 tracking-tight">{stat.value}</div>
-                <div className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">{stat.label}</div>
+                <div className="text-4xl font-extrabold text-slate-900 dark:text-white mb-1 tracking-tight">
+                  {stat.value}
+                </div>
+                <div className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">
+                  {stat.label}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -96,32 +120,45 @@ export const Home = () => {
 
       {/* Expertise Section - Bento Grid Style */}
       <section className="py-32 bg-slate-50 dark:bg-slate-950/50 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div
+          className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent"
+        />
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl font-extrabold mb-6 tracking-tight sm:text-5xl">Technical Arsenal</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">Leveraging cutting-edge technologies to solve complex business problems with elegance and efficiency.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Leveraging cutting-edge technologies to solve complex business problems with elegance and
+              efficiency.
+            </p>
           </div>
           
           <div className="grid md:grid-cols-12 gap-6">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="md:col-span-8 p-10 bg-white dark:bg-slate-900 rounded-[2.5rem] border shadow-sm group hover:shadow-xl transition-all"
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 mb-8 transition-transform group-hover:scale-110">
+              <div
+                className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 mb-8 transition-transform group-hover:scale-110"
+              >
                 <Globe className="h-7 w-7" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Advanced Front-End Systems</h3>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                I build UX-friendly, polished user interfaces using React, TypeScript, and modern state management.
-                I&apos;ve worked on large eCommerce front ends, including migrating older architectures to newer patterns while keeping performance,
-                usability, and maintainability front and center.
+                I build UX-friendly, polished user interfaces using React, TypeScript, and modern state
+                management. I&apos;ve worked on large eCommerce front ends, including migrating older
+                architectures to newer patterns while keeping performance, usability, and maintainability front
+                and center.
               </p>
               <div className="flex flex-wrap gap-2">
                 {['React', 'TypeScript', 'Next.js', 'AngularJS', 'Tailwind CSS'].map(tag => (
-                  <span key={tag} className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-600 dark:text-slate-400">{tag}</span>
+                  <span
+                    key={tag}
+                    className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-600 dark:text-slate-400"
+                  >
+                    {tag}
+                  </span>
                 ))}
               </div>
             </motion.div>
@@ -132,17 +169,25 @@ export const Home = () => {
               viewport={{ once: true }}
               className="md:col-span-4 p-10 bg-primary text-white rounded-[2.5rem] shadow-xl group hover:scale-[1.02] transition-all"
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 text-white mb-8 transition-transform group-hover:rotate-12">
+              <div
+                className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 text-white mb-8 transition-transform group-hover:rotate-12"
+              >
                 <Database className="h-7 w-7" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Robust Back-End</h3>
               <p className="text-primary-foreground/80 leading-relaxed mb-6">
-                I design and build RESTful APIs using C# and SQL, with a strong focus on security, performance,
-                and future-proofing. Most of my experience is in production systems where reliability matters and bugs are not an option.
+                I design and build RESTful APIs using C# and SQL, with a strong focus on security,
+                performance, and future-proofing. Most of my experience is in production systems where
+                reliability matters and bugs are not an option.
               </p>
               <div className="flex flex-wrap gap-2">
                 {['C#', '.NET', 'SQL Server', 'PostgreSQL', 'Redis'].map(tag => (
-                  <span key={tag} className="px-3 py-1 rounded-full bg-white/10 text-xs font-bold text-white/90">{tag}</span>
+                  <span
+                    key={tag}
+                    className="px-3 py-1 rounded-full bg-white/10 text-xs font-bold text-white/90"
+                  >
+                    {tag}
+                  </span>
                 ))}
               </div>
             </motion.div>
@@ -155,14 +200,17 @@ export const Home = () => {
             >
               <div className="flex flex-col md:flex-row gap-10 items-center">
                 <div className="flex-1">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 mb-8 transition-transform group-hover:scale-110">
+                  <div
+                    className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 mb-8 transition-transform group-hover:scale-110"
+                  >
                     <Layers className="h-7 w-7" />
                   </div>
                   <h3 className="text-2xl font-bold mb-4">Enterprise eCommerce Solutions</h3>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    I’ve spent much of my career working on mission-critical eCommerce platforms with real-world constraints.
-                    That includes navigating compliance requirements, integrating third-party logistics providers,
-                    and building around complex payment and fulfillment workflows.
+                    I've spent much of my career working on mission-critical eCommerce platforms with
+                    real-world constraints. That includes navigating compliance requirements, integrating
+                    third-party logistics providers, and building around complex payment and fulfillment
+                    workflows.
                   </p>
                 </div>
                 <div className="flex-1 grid grid-cols-2 gap-4 w-full">
@@ -197,14 +245,22 @@ export const Home = () => {
           viewport={{ once: true }}
           className="relative overflow-hidden rounded-[3rem] bg-slate-900 dark:bg-slate-800 px-8 py-20 text-center text-white shadow-2xl"
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent)] pointer-events-none" />
+          <div
+            className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent)] pointer-events-none"
+          />
           <h2 className="relative z-10 mb-8 text-4xl font-extrabold tracking-tight sm:text-6xl">
             Ready to build something <span className="text-accent">extraordinary</span>?
           </h2>
-          <p className="relative z-10 mb-10 text-xl text-slate-400 max-w-2xl mx-auto">Let's collaborate to bring your vision to life with performance-driven code and world-class design.</p>
+          <p className="relative z-10 mb-10 text-xl text-slate-400 max-w-2xl mx-auto">
+            Let's collaborate to bring your vision to life with performance-driven code and world-class
+            design.
+          </p>
           <div className="relative z-10 flex flex-wrap justify-center gap-4">
             <Link to="/contact">
-              <Button size="lg" className="h-16 px-10 text-lg font-bold rounded-2xl shadow-xl hover:shadow-primary/40 active:scale-95">
+              <Button
+                size="lg"
+                className="h-16 px-10 text-lg font-bold rounded-2xl shadow-xl hover:shadow-primary/40 active:scale-95"
+              >
                 Start a Conversation
               </Button>
             </Link>
