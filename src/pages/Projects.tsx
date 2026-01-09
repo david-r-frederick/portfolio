@@ -45,28 +45,12 @@ const clientProjects: Project[] = [
 
 const employerProjects: Project[] = [
   {
-    title: 'Core eCommerce Rebuild',
-    category: 'Full-Stack Development',
-    desc: 'Architected and constructed a complete rebuild of the front-end for a core enterprise eCommerce platform, migrating from AngularJS to React.',
-    icon: <ShoppingCart className="h-6 w-6" />,
-    tags: ['React', 'TypeScript', 'Redux', 'C#'],
-    link: '#'
-  },
-  {
-    title: 'HIPAA Compliant Platforms',
-    category: 'Specialized Web Apps',
-    desc: 'Developed multiple HIPAA-compliant eCommerce projects ensuring strict data security and privacy standards were met.',
-    icon: <ShieldCheck className="h-6 w-6" />,
-    tags: ['React', 'Security', 'RESTful APIs', 'SQL'],
-    link: '#'
-  },
-  {
     title: 'Lamar University Web Fleet',
     category: 'Web Design & CMS',
     desc: 'Designed and developed 4 new department websites and 40+ web pages for Lamar University\'s Office of International Education.',
     icon: <Globe className="h-6 w-6" />,
     tags: ['Cascade CMS', 'CSS', 'HTML', 'JavaScript'],
-    link: '#'
+    link: 'https://www.lamar.edu/international-education/index.html'
   }
 ];
 
@@ -238,12 +222,12 @@ export const Projects = () => {
                   </div>
 
                   <div className="flex gap-3">
-                    <Button
+                    {project.link && <Button
                       variant="outline"
                       size="sm"
                       className="flex-1 rounded-xl h-11 border-primary/20 hover:border-primary gap-2 transition-all">
-                      <ExternalLink className="h-4 w-4" /> Preview
-                    </Button>
+                      <ExternalLink href={project.link} className="h-4 w-4" /> Preview
+                    </Button>}
                     <Button
                       variant="secondary"
                       size="sm"
